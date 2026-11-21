@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:8226175879780d80c6834c07dde825c0c6dad29286fde93ada5d2263fcc2de3f",
+  "claims": [
+    {
+      "id": "claim_716dcca23d9546cfa7ab05081bc1a9da",
+      "statement": "zerostreet-skills ships 5 MIT Agent Skills (sovereign-system-architect, portfolio-risk-audit, pre-trade-risk-gate, macro-crisis-sim, rebalance-math-solver) restricted to descriptive analytics and engineering scaffolding without buy/sell advice or model weights.",
+      "evidence": [
+        {
+          "resource": "repo://skills/macro-crisis-sim/SKILL.md#L1-L25",
+          "version": "repo-lines-v1:sha256:85dc9828a1e21d232fe167849d4d601885265536fecda292a55360bd18d34685:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY1MmQ3MTExMDNkNTBhNDM3ODMwYzZmYmNkMDRmYjRiYWI0OWEwZjgyZjZkMjZkMWM3OTFjNmU4NDg4ZGQwOTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM5NjIyYjA0YTIyMGJiNzdlZmQ0YmFjMmVkOTYzOTFiNWMyOWZhZDJjZmExZTZhNWI0MDQwZjEyOTU2NzE3NjMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://skills/portfolio-risk-audit/SKILL.md#L1-L26",
+          "version": "repo-lines-v1:sha256:d4d9aeb4c9786fd23b6c001540d912ac29384e5cfecbd9416fe591a36eed2a97:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY1MmQ3MTExMDNkNTBhNDM3ODMwYzZmYmNkMDRmYjRiYWI0OWEwZjgyZjZkMjZkMWM3OTFjNmU4NDg4ZGQwOTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJlN2FmMjI3NTI1OGI3Nzk1MzM0MzE1OGViOTk3YzBiZmVhYmQzNWI0NjIwZDAyNTU3NDA4MmU5NjQwMzQ1ODEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://skills/pre-trade-risk-gate/SKILL.md#L1-L25",
+          "version": "repo-lines-v1:sha256:349510fbd56f242b0d03bcd976f16602f347ac9339560732907d4d567405c274:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY1MmQ3MTExMDNkNTBhNDM3ODMwYzZmYmNkMDRmYjRiYWI0OWEwZjgyZjZkMjZkMWM3OTFjNmU4NDg4ZGQwOTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJiNWEyZDM1MTBjYzAyYjNjMjVkMTkzYjYxNzY2MGM3NDVkNDcyYzlkOWY1OGNjYjNmZTQ1YzBiYThlOGU3Y2UiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://skills/rebalance-math-solver/SKILL.md#L1-L26",
+          "version": "repo-lines-v1:sha256:41044b24aa8a7c798a413eb9a2469fa72133462afeb507d548adf95bb41a36e0:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY1MmQ3MTExMDNkNTBhNDM3ODMwYzZmYmNkMDRmYjRiYWI0OWEwZjgyZjZkMjZkMWM3OTFjNmU4NDg4ZGQwOTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI4OGRjZTM3ZjQ0OGQ5NWY1ZjdhNGQ4MzQwNDE4NzNjN2FkMGNkMzVlODI2OTYyZmJjMzViMjEwYWExY2NiOGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://skills/sovereign-system-architect/SKILL.md#L1-L23",
+          "version": "repo-lines-v1:sha256:1334afe6d1f173e689dc641d584cb1ac73f911cd31faff4715a81d299ca3953d:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY1MmQ3MTExMDNkNTBhNDM3ODMwYzZmYmNkMDRmYjRiYWI0OWEwZjgyZjZkMjZkMWM3OTFjNmU4NDg4ZGQwOTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM1MTk2MjE5OGIwZjVjMjk3ZmM3ZTBhY2MxZWY0Y2Q5OTViYmQzN2Y2OWQ1MTc3MTU2ZGMyYzdmMmM3N2U4MmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1e5c20f3ae7147e49eb425462ab4095d",
+      "statement": "skill_registry implements Progressive Disclosure loading (discover_skills, load_skill_markdown with path-traversal rejection) and validate_skills_compliance checking MIT license, name/description length caps, and zero binary weight files.",
+      "evidence": [
+        {
+          "resource": "repo://src/zerostreet_skills/skill_registry.py#L1-L128",
+          "version": "repo-lines-v1:sha256:c94709af84458bdfea765b6ef97d4405df51bc350c5e789613063a92d3b67cd9:eyJzZWxlY3RlZExpbmVDb3VudCI6MTI4LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJlM2Y0NzMxZDBjNmIyYTE1Y2NlYzAyZWVkYmNiMjY0OTJmYTVhYzg4NTkwNDczNGIzZTU0ZjFkOTgyODU2YzQ4IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI3NmFmN2MyYWMyMjc5NjBmY2Q1YzNjYzg4MGQ1YjA4Y2ZiMzk3MTEyZGE4MTBiZjc1YzNmNGViYWEzYTM3ZTVkIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MCwicHJlY2VkaW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_a501518c4670425e81c04be5e744d620",
+      "statement": "create_zerostreet_architect_agent wires create_deep_agent with a CompositeBackend mounting skills at /skills/, a risk-audit-reviewer SubAgent, explicit model enforcement, InMemorySaver checkpointer, and interrupt_on gating for submit_foundry_compile_job.",
+      "evidence": [
+        {
+          "resource": "repo://src/zerostreet_skills/architect_agent.py#L1-L188",
+          "version": "repo-lines-v1:sha256:33595f9c1d97b4d283ac87dae5a3a72e002a664ced243fe12e5f6be3ca79f669:eyJzZWxlY3RlZExpbmVDb3VudCI6MTg4LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI2NGQ2YjI5OTU4ODU3NGJkYTE5ZmZlYzc1NjUwYTRiZDZlNGQxOWFlOTkxZWMxNzJkY2MyOTE3MDU4Y2RmOTM4IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIzMGMxZjE4OGYxNDJlZDdhODI0NjgwYjIwNzE3MmM1NTE5YmM2MTRhNDhmZGE3Y2YxNjdlZGI4ZGRmNzk5NTZjIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MCwicHJlY2VkaW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.7.2",
+    "at": "2026-11-21T17:30:29.653Z"
+  }
+}

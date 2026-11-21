@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "pages": {
+    "/openwiki/architecture/skills-and-architect-agent.md": {
+      "pageVersion": "sha256:8226175879780d80c6834c07dde825c0c6dad29286fde93ada5d2263fcc2de3f",
+      "completedBy": "antigravity",
+      "completedRunId": "4829f1fd-0798-4a95-a276-b1a33a4e2ae9",
+      "gitHead": "62694c0329b2a250ec538a1d8c5bcbb89963d639",
+      "sourceFingerprint": "sha256:794100a58ca187078eff763c6a26f85504210cc883dc61846006d19afdb3e237"
+    },
+    "/openwiki/quickstart.md": {
+      "pageVersion": "sha256:1ec40ba2c8835e45f0b9ce9fbbfa234eb73a7a846e0d71431e58134c68537614",
+      "completedBy": "antigravity",
+      "completedRunId": "4829f1fd-0798-4a95-a276-b1a33a4e2ae9",
+      "gitHead": "62694c0329b2a250ec538a1d8c5bcbb89963d639",
+      "sourceFingerprint": "sha256:794100a58ca187078eff763c6a26f85504210cc883dc61846006d19afdb3e237"
+    },
+    "/openwiki/workflows/foundry-mcp-scaffolding.md": {
+      "pageVersion": "sha256:3d7a59273c040d511f10ff353c9857dc257cbd8fba5daba33bb3368debaec0bc",
+      "completedBy": "antigravity",
+      "completedRunId": "4829f1fd-0798-4a95-a276-b1a33a4e2ae9",
+      "gitHead": "62694c0329b2a250ec538a1d8c5bcbb89963d639",
+      "sourceFingerprint": "sha256:794100a58ca187078eff763c6a26f85504210cc883dc61846006d19afdb3e237"
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:3d7a59273c040d511f10ff353c9857dc257cbd8fba5daba33bb3368debaec0bc",
+  "claims": [
+    {
+      "id": "claim_572e7de2e6c4439ba594a1b7c716123b",
+      "statement": "foundry_mcp instantiates mcp.server.mcpserver.MCPServer (mcp>=2.0) named zerostreet-foundry and exposes 6 tools: list_zerostreet_skills, read_zerostreet_skill, build_user_policy_config, submit_foundry_compile_job, run_crisis_replay, and scaffold_sovereign_runtime_manifest, running via stdio in main().",
+      "evidence": [
+        {
+          "resource": "repo://src/zerostreet_skills/foundry_mcp.py#L1-L239",
+          "version": "repo-lines-v1:sha256:f61c5d1f05da5dc2b66193adb070c2ca579bab4b3afa825c574adf153e51bb24:eyJzZWxlY3RlZExpbmVDb3VudCI6MjM5LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJlZjgxNDNlZDgwY2RiMzQwOTJlNGFiM2U1YzZhM2JjMTBiMjhlMzYzNDczZjY4MjVhMWIxMzAwYzM0ZDk4MWViIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIxOGU5OTIzMmNkM2EzMDlmNTBjYmQ2ZjY2MjEyN2VlYWFmY2UxZjczNjI5MmRlZmIxMTNkOTgxYTIwYzdkODUyIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MCwicHJlY2VkaW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_a1fae18a053d40f5ac1b00bfa835eea9",
+      "statement": "AlphaSmithFoundryClient sends Bearer-authenticated HTTP requests to /v1/foundry/compile and /v1/eval/crisis using httpx.Client with optional MockTransport injection, while build_validated_policy_config enforces zerostreet_schema RLRewardWeights and UserPolicyConfig rules.",
+      "evidence": [
+        {
+          "resource": "repo://src/zerostreet_skills/foundry_mcp.py#L1-L239",
+          "version": "repo-lines-v1:sha256:f61c5d1f05da5dc2b66193adb070c2ca579bab4b3afa825c574adf153e51bb24:eyJzZWxlY3RlZExpbmVDb3VudCI6MjM5LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJlZjgxNDNlZDgwY2RiMzQwOTJlNGFiM2U1YzZhM2JjMTBiMjhlMzYzNDczZjY4MjVhMWIxMzAwYzM0ZDk4MWViIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIxOGU5OTIzMmNkM2EzMDlmNTBjYmQ2ZjY2MjEyN2VlYWFmY2UxZjczNjI5MmRlZmIxMTNkOTgxYTIwYzdkODUyIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MCwicHJlY2VkaW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
+        },
+        {
+          "resource": "repo://tests/test_skills_and_mcp.py#L101-L214",
+          "version": "repo-lines-v1:sha256:c6b3d3864f1a8d1e5c7fe05d8fa28065193408396d14dbc11e050d0b60ee4c79:eyJzZWxlY3RlZExpbmVDb3VudCI6MTE0LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJmN2ZhODVmNTg1MjdmYjc1NjI4MmQyNDFlNzQ3NTI2M2Q1MTYwZmM1YjdiNDAwODc0ODUyNTZlM2E5ODM0M2M1IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI1MzgxODJjYzZkNWI1OWQ4MjFhMGNkYTYzNWQ4ZGNiNDA1MmU3OGEwNGU1YjUxMzhkOWQ2ZWIwZGI5NTc5N2VjIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI1YmQxMGUzNTJlYmI3M2Y0Y2U4NzQ1YWE0ZjU0OWFkZjZhYmUwMjRhMzlmNTUzMWExMWMxYjk3OWMyZWQzM2Q0IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_dce74b1a30bf44ceacb2b43806173e47",
+      "statement": "generate_sovereign_scaffold_manifest outputs a non-advisory AlphaGraph and Guardrail runtime configuration manifest with contains_company_weights set to False and required env var keys listed without secrets.",
+      "evidence": [
+        {
+          "resource": "repo://src/zerostreet_skills/foundry_mcp.py#L84-L120",
+          "version": "repo-lines-v1:sha256:9d8d784d21b67f038a1fbd334bf9be4304dd90660d6a4fda8a82ef342e77f2bb:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk2MjQ0OGQ2NGMyYTc4MGEyZWExZDFhMDRjNjY3YThjYzg4N2QxZDEyNTdjNjEyMDNlMzI0Y2RhMjMxY2VjY2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkzY2U0YzM2YTU5Y2MwOWYyZTNjNzA1YzFjNTcyN2Q3NTVmMjE1MmIwZjRmZjU4ZmYyMzBmZjI3ZjM5NzNjY2EiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMxMWFkNTVlZWRmNmU4YTlhNGJjNjBjZGNlNTZlMjFjMGQxZjc5ZjJlYWM1YjUxYWFiZjAwMmU3NWEwNTk0MWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc1N2M4MmEwYThmNTgxYmEzMjJiY2E5NzRiZDMxZDNhYWVkMmRkODgwYzdmYWMwNTdlZTZlODc5ZjM2MjJmMDMifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.7.2",
+    "at": "2026-11-21T17:30:29.653Z"
+  }
+}
