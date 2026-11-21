@@ -1,0 +1,48 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "zerostreet-skills"
+version = "0.1.0"
+description = "ZeroStreet MIT Agent Skills, Foundry MCP Server, and DeepAgents Build-Time Architect"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.11"
+dependencies = [
+    "mcp[cli]>=1.2.0",
+    "deepagents>=0.6.0",
+    "langchain-core>=1.0.0",
+    "langgraph>=1.0.0",
+    "httpx>=0.27.0",
+    "pydantic>=2.7.0",
+    "pyyaml>=6.0.1",
+    "loguru>=0.7.2",
+    "zerostreet-schema",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0.0",
+    "ruff>=0.6.0",
+]
+
+[project.scripts]
+zerostreet-foundry-mcp = "zerostreet_skills.foundry_mcp:main"
+
+[tool.uv.sources]
+zerostreet-schema = { path = "../zerostreet-schema", editable = true }
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/zerostreet_skills"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]

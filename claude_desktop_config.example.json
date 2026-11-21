@@ -1,0 +1,17 @@
+{
+  "mcpServers": {
+    "zerostreet-foundry": {
+      "command": "uv",
+      "args": [
+        "--directory",
+        "/path/to/zerostreet-skills",
+        "run",
+        "zerostreet-foundry-mcp"
+      ],
+      "env": {
+        "ALPHASMITH_BASE_URL": "http://127.0.0.1:8000",
+        "ZEROSTREET_API_KEY": "zs_pro_live"
+      }
+    }
+  }
+}
