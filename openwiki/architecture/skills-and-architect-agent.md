@@ -7,10 +7,11 @@ tags:
   - agent-skills
   - deepagents
   - hitl
+  - zerosteer
   - compliance
 verified:
   - by: openwiki/0.7.2
-    at: 2026-11-22T03:46:58.038Z
+    at: 2026-11-22T09:46:21.725Z
 sources:
   - id: openwiki-source-69edce1fc0862963647404f2
     resource: repo://skills/macro-crisis-sim/SKILL.md
@@ -26,7 +27,7 @@ sources:
     resource: repo://src/zerostreet_skills/architect_agent.py
   - id: openwiki-source-848edfd4b5c24ded30e2a7cc
     resource: repo://src/zerostreet_skills/skill_registry.py
-generated: { by: "antigravity", at: "2026-11-22T03:46:58.038Z" }
+generated: { by: "antigravity", at: "2026-11-22T09:46:21.725Z" }
 ---
 
 # Agent Skills & DeepAgents Architect Architecture / 5대 Agent Skills 및 DeepAgents Architect 아키텍처
@@ -45,7 +46,7 @@ Every skill follows the Anthropic Agent Skills specification (`SKILL.md` YAML fr
 
 | Skill (`name`) | Role Summary / 역할 요약 | File / 경로 |
 | :--- | :--- | :--- |
-| `sovereign-system-architect` | Hybrid layer assembly (Data/Hot-Path/Research) & HITL scaffolding / 하이브리드 아키텍처 조립 | [SKILL.md](../../skills/sovereign-system-architect/SKILL.md) |
+| `sovereign-system-architect` | Hybrid layer assembly (`AlphaGraph`, `ZeroSteer` backbone, `AlphaSmith` Foundry) & HITL scaffolding / 하이브리드 아키텍처 조립 | [SKILL.md](../../skills/sovereign-system-architect/SKILL.md) |
 | `portfolio-risk-audit` | Ex-post `RunTrace` attribution, HHI concentration, and 3σ drift audits / 사후 요인 귀인 및 분포 이탈 감사 | [SKILL.md](../../skills/portfolio-risk-audit/SKILL.md) |
 | `pre-trade-risk-gate` | Deterministic kill-switch, turnover cap, notional, and HITL gate design / 결정론적 사전 리스크 게이트 | [SKILL.md](../../skills/pre-trade-risk-gate/SKILL.md) |
 | `macro-crisis-sim` | 2020 COVID, 2022 Rate Shock, and 2024 Yen Carry stress replay / 3대 역사적 위기 리플레이 | [SKILL.md](../../skills/macro-crisis-sim/SKILL.md) |
