@@ -1,4 +1,7 @@
-"""ZeroStreet Foundry MCP Server (mcp>=2.0 MCPServer 규격)."""
+"""ZeroStreet Foundry MCP Server conforming to mcp>=2.0 MCPServer.
+
+mcp>=2.0 MCPServer 규격을 준수하는 ZeroStreet Foundry MCP 서버입니다.
+"""
 
 import os
 from typing import Any, Literal
@@ -19,7 +22,10 @@ from zerostreet_skills.skill_registry import discover_skills, load_skill_markdow
 
 
 class AlphaSmithFoundryClient:
-    """AlphaSmith Layer 2 컨트롤 플레인 HTTP 클라이언트."""
+    """HTTP client communicating with the AlphaSmith Layer 2 control plane.
+
+    AlphaSmith Layer 2 컨트롤 플레인과 통신하는 HTTP 클라이언트입니다.
+    """
 
     def __init__(
         self,
@@ -44,6 +50,10 @@ class AlphaSmithFoundryClient:
         )
 
     def compile_policy(self, req: PolicyCompileRequest) -> PolicyCompileResult:
+        """Submit a PolicyCompileRequest to /v1/foundry/compile with Bearer auth.
+
+        Bearer 인증을 사용해 /v1/foundry/compile로 정책 컴파일 요청을 전송합니다.
+        """
         with self._build_client() as client:
             resp = client.post("/v1/foundry/compile", json=req.model_dump(mode="json"))
             resp.raise_for_status()
@@ -56,6 +66,10 @@ class AlphaSmithFoundryClient:
         scenario_ids: list[str] | None = None,
         max_drawdown_limit_pct: float = -25.0,
     ) -> dict[str, Any]:
+        """Run historical stress replay via /v1/eval/crisis over HTTP.
+
+        HTTP /v1/eval/crisis 엔드포인트로 역사적 위기 스트레스 평가를 실행합니다.
+        """
         payload: dict[str, Any] = {
             "positions_weights": positions_weights,
             "max_drawdown_limit_pct": max_drawdown_limit_pct,
@@ -78,7 +92,10 @@ def build_validated_policy_config(
     max_single_weight: float = 0.60,
     benchmark_asset: str | None = None,
 ) -> UserPolicyConfig:
-    """zerostreet_schema 규격에 맞춰 UserPolicyConfig를 검증·생성합니다."""
+    """Validate and construct UserPolicyConfig against zerostreet_schema invariants.
+
+    zerostreet_schema 불변식에 맞춰 UserPolicyConfig를 검증 및 생성합니다.
+    """
     weights = RLRewardWeights.model_validate(rl_reward_weights)
     return UserPolicyConfig(
         target_universe=target_universe,
@@ -98,7 +115,10 @@ def generate_sovereign_scaffold_manifest(
     execution_mode: Literal["paper", "live"] = "paper",
     hitl_threshold_krw: float = 10_000_000.0,
 ) -> dict[str, Any]:
-    """로컬 AlphaGraph 데몬 + Guardrail + Broker MCP 스캐폴드 매니페스트를 생성합니다."""
+    """Generate a local AlphaGraph daemon + Guardrail + Broker MCP scaffold manifest.
+
+    로컬 AlphaGraph 데몬, Guardrail 및 Broker MCP 스캐폴드 매니페스트를 생성합니다.
+    """
     return {
         "user_id": user_id,
         "execution_mode": execution_mode,
@@ -134,13 +154,19 @@ mcp_server = MCPServer(
 
 @mcp_server.tool()
 def list_zerostreet_skills() -> list[dict[str, Any]]:
-    """List MIT ZeroStreet Agent Skills (Progressive Disclosure Level 1 metadata)."""
+    """List MIT ZeroStreet Agent Skills (Progressive Disclosure Level 1 metadata).
+
+    MIT ZeroStreet 에이전트 스킬 Level 1 메타데이터 목록을 반환합니다.
+    """
     return [entry.model_dump() for entry in discover_skills()]
 
 
 @mcp_server.tool()
 def read_zerostreet_skill(skill_name: str) -> str:
-    """Read full SKILL.md instructions for a specific ZeroStreet Agent Skill."""
+    """Read full SKILL.md instructions for a specific ZeroStreet Agent Skill.
+
+    특정 ZeroStreet 에이전트 스킬의 전체 SKILL.md 본문을 조회합니다.
+    """
     return load_skill_markdown(skill_name)
 
 
@@ -154,7 +180,10 @@ def build_user_policy_config(
     max_single_weight: float = 0.60,
     benchmark_asset: str | None = None,
 ) -> dict[str, Any]:
-    """Validate and serialize a UserPolicyConfig from user-supplied universe and reward weights."""
+    """Validate and serialize UserPolicyConfig from user-supplied universe and rewards.
+
+    사용자가 지정한 유니버스와 보상 가중치로 UserPolicyConfig를 검증·직렬화합니다.
+    """
     cfg = build_validated_policy_config(
         target_universe=target_universe,
         rl_reward_weights=rl_reward_weights,
@@ -176,7 +205,10 @@ def submit_foundry_compile_job(
     portfolio_horizon: int = 20,
     compile_steps: int = 10,
 ) -> dict[str, Any]:
-    """Submit a custom Policy Head trajectory RL compilation job to AlphaSmith Foundry."""
+    """Submit a custom Policy Head trajectory RL compile job to AlphaSmith Foundry.
+
+    사용자 맞춤형 Policy Head 궤적 RL 컴파일 작업을 AlphaSmith Foundry로 전송합니다.
+    """
     policy_cfg = build_validated_policy_config(
         target_universe=target_universe,
         rl_reward_weights=rl_reward_weights,
@@ -199,7 +231,10 @@ def run_crisis_replay(
     scenario_ids: list[str] | None = None,
     max_drawdown_limit_pct: float = -25.0,
 ) -> dict[str, Any]:
-    """Run historical macro crisis stress replay via AlphaSmith /v1/eval/crisis."""
+    """Run historical macro crisis stress replay via AlphaSmith /v1/eval/crisis.
+
+    AlphaSmith /v1/eval/crisis를 통해 역사적 거시경제 위기 스트레스 테스트를 실행합니다.
+    """
     client = AlphaSmithFoundryClient()
     return client.evaluate_crisis(
         positions_weights=positions_weights,
@@ -216,7 +251,10 @@ def scaffold_sovereign_runtime_manifest(
     execution_mode: Literal["paper", "live"] = "paper",
     hitl_threshold_krw: float = 10_000_000.0,
 ) -> dict[str, Any]:
-    """Generate a local AlphaGraph + Guardrail configuration manifest (0 company weights)."""
+    """Generate a local AlphaGraph + Guardrail configuration manifest (0 company weights).
+
+    로컬 AlphaGraph + Guardrail 설정 매니페스트(회사 가중치 0바이트)를 생성합니다.
+    """
     policy_cfg = build_validated_policy_config(
         target_universe=target_universe,
         rl_reward_weights=rl_reward_weights,
@@ -230,7 +268,10 @@ def scaffold_sovereign_runtime_manifest(
 
 
 def main() -> None:
-    """ZeroStreet Foundry MCP 서버를 stdio 전송으로 실행합니다."""
+    """Run ZeroStreet Foundry MCPServer over stdio transport.
+
+    stdio 전송 방식으로 ZeroStreet Foundry MCP 서버를 실행합니다.
+    """
     logger.info("Starting ZeroStreet Foundry MCPServer (stdio transport)")
     mcp_server.run(transport="stdio")
 

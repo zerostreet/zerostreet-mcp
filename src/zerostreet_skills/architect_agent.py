@@ -1,4 +1,6 @@
-"""ZeroStreet Build-Time DeepAgents Architect Agent 빌더.
+"""ZeroStreet Build-Time DeepAgents Architect Agent builder.
+
+ZeroStreet Build-Time 온보딩용 DeepAgents Architect Agent 빌더 모듈입니다.
 
 Verified against deepagents==0.7.41 & langchain==1.5.2 installed in `.venv`:
 - file:///Users/kimyoungh/alphaknow/zerostreet-repos/zerostreet-skills/.venv/lib/python3.11/site-packages/deepagents/graph.py
@@ -40,7 +42,10 @@ Strict Regulatory & Engineering Boundaries:
 
 
 def _build_architect_tools(client: AlphaSmithFoundryClient) -> list[BaseTool]:
-    """Build-Time Architect Agent가 사용하는 Foundry 및 스캐폴드 도구를 생성합니다."""
+    """Create Foundry and scaffolding tools used by the Build-Time Architect Agent.
+
+    Build-Time Architect Agent가 사용하는 Foundry 및 스캐폴드 도구를 생성합니다.
+    """
 
     @tool
     def build_user_policy_config(
@@ -52,7 +57,10 @@ def _build_architect_tools(client: AlphaSmithFoundryClient) -> list[BaseTool]:
         max_single_weight: float = 0.60,
         benchmark_asset: str | None = None,
     ) -> dict[str, Any]:
-        """Validate a user-specified UserPolicyConfig without embedding advisory defaults."""
+        """Validate a user-specified UserPolicyConfig without advisory defaults.
+
+        자문 기본값 없이 사용자 지정 UserPolicyConfig를 검증 및 생성합니다.
+        """
         cfg = build_validated_policy_config(
             target_universe=target_universe,
             rl_reward_weights=rl_reward_weights,
@@ -73,7 +81,10 @@ def _build_architect_tools(client: AlphaSmithFoundryClient) -> list[BaseTool]:
         portfolio_horizon: int = 20,
         compile_steps: int = 10,
     ) -> dict[str, Any]:
-        """Submit a custom Policy Head compilation request to AlphaSmith Foundry (HITL gated)."""
+        """Submit a custom Policy Head compilation request to Foundry (HITL gated).
+
+        AlphaSmith Foundry로 맞춤형 Policy Head 컴파일을 요청합니다(HITL 승인 필수).
+        """
         cfg = build_validated_policy_config(
             target_universe=target_universe,
             rl_reward_weights=rl_reward_weights,
@@ -93,7 +104,10 @@ def _build_architect_tools(client: AlphaSmithFoundryClient) -> list[BaseTool]:
         scenario_ids: list[str] | None = None,
         max_drawdown_limit_pct: float = -25.0,
     ) -> dict[str, Any]:
-        """Run historical stress replay (2020_COVID, 2022_Rate_Shock, 2024_Yen_Carry)."""
+        """Run historical stress replay (2020_COVID, 2022_Rate_Shock, 2024_Yen_Carry).
+
+        역사적 위기 시나리오(2020 COVID, 2022 금리 쇼크, 2024 엔캐리)를 리플레이합니다.
+        """
         return client.evaluate_crisis(
             positions_weights=positions_weights,
             scenario_ids=scenario_ids,
@@ -108,7 +122,10 @@ def _build_architect_tools(client: AlphaSmithFoundryClient) -> list[BaseTool]:
         execution_mode: Literal["paper", "live"] = "paper",
         hitl_threshold_krw: float = 10_000_000.0,
     ) -> dict[str, Any]:
-        """Generate local AlphaGraph & OrderGuardrail configuration manifest (0 company weights)."""
+        """Generate local AlphaGraph & OrderGuardrail configuration manifest.
+
+        로컬 AlphaGraph 및 OrderGuardrail 설정 매니페스트(가중치 0바이트)를 생성합니다.
+        """
         cfg = build_validated_policy_config(
             target_universe=target_universe,
             rl_reward_weights=rl_reward_weights,
@@ -138,9 +155,9 @@ def create_zerostreet_architect_agent(
     extra_subagents: list[SubAgent | CompiledSubAgent] | None = None,
     name: str = "zerostreet-architect",
 ):
-    """DeepAgents 기반 Build-Time Architect Agent를 생성합니다.
+    """Build a DeepAgents Build-Time Architect Agent with isolated /skills/ and HITL gating.
 
-    CompositeBackend를 통해 작업 공간(`/`)과 읽기 전용 `/skills/` 루트를 분리하고,
+    CompositeBackend로 작업 공간(`/`)과 읽기 전용 `/skills/` 루트를 분리하고,
     `submit_foundry_compile_job` 호출 시 HumanInTheLoopMiddleware 인터럽트를 강제합니다.
     """
     if model is None:

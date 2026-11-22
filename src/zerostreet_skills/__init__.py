@@ -1,4 +1,7 @@
-"""ZeroStreet MIT Agent Skills, Foundry MCP Server, and DeepAgents Architect."""
+"""ZeroStreet MIT Agent Skills, Foundry MCP Server, and DeepAgents Architect.
+
+ZeroStreet MIT 에이전트 스킬, Foundry MCP 서버 및 DeepAgents 아키텍트 패키지입니다.
+"""
 
 from zerostreet_skills.architect_agent import (
     ARCHITECT_SYSTEM_PROMPT,

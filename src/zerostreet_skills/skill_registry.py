@@ -1,4 +1,7 @@
-"""Agent Skills Progressive Disclosure 레지스트리 및 규제/무결성 검증 유틸리티."""
+"""Agent Skills Progressive Disclosure registry and compliance validator.
+
+Agent Skills Progressive Disclosure 레지스트리 및 규제·무결성 검증 유틸리티입니다.
+"""
 
 import re
 from pathlib import Path
@@ -21,7 +24,10 @@ _FORBIDDEN_WEIGHT_SUFFIXES: tuple[str, ...] = (".pt", ".pth", ".safetensors", ".
 
 
 class SkillCatalogEntry(BaseModel):
-    """Progressive Disclosure Level 1 메타데이터 항목."""
+    """Progressive Disclosure Level 1 metadata entry for one Agent Skill.
+
+    Progressive Disclosure Level 1 스킬 메타데이터 항목입니다.
+    """
 
     name: str
     description: str
@@ -63,7 +69,10 @@ def _parse_frontmatter(content: str, skill_path: Path, dir_name: str) -> SkillCa
 
 
 def discover_skills(skills_dir: Path = DEFAULT_SKILLS_DIR) -> list[SkillCatalogEntry]:
-    """디렉터리 내 모든 SKILL.md Level 1 메타데이터를 정렬하여 반환합니다."""
+    """Scan subdirectories and return sorted Level 1 SKILL.md metadata entries.
+
+    하위 디렉터리를 스캔해 정렬된 Level 1 SKILL.md 메타데이터 목록을 반환합니다.
+    """
     root = Path(skills_dir)
     if not root.exists():
         return []
@@ -81,7 +90,10 @@ def discover_skills(skills_dir: Path = DEFAULT_SKILLS_DIR) -> list[SkillCatalogE
 
 
 def load_skill_markdown(skill_name: str, skills_dir: Path = DEFAULT_SKILLS_DIR) -> str:
-    """Progressive Disclosure Level 2: 지정 스킬의 SKILL.md 본문을 로드합니다."""
+    """Load full SKILL.md body (Level 2) while rejecting path-traversal attempts.
+
+    경로 탈출 시도를 차단하며 지정 스킬의 SKILL.md 전체 본문(Level 2)을 로드합니다.
+    """
     cleaned = skill_name.strip()
     if not cleaned or "/" in cleaned or "\\" in cleaned or ".." in cleaned:
         raise ValueError(f"Invalid skill name: {skill_name!r}")
@@ -96,7 +108,10 @@ def load_skill_markdown(skill_name: str, skills_dir: Path = DEFAULT_SKILLS_DIR) 
 
 
 def validate_skills_compliance(skills_dir: Path = DEFAULT_SKILLS_DIR) -> list[str]:
-    """5종 MIT 스킬 규격 및 비투자자문/0바이트 가중치 컴플라이언스를 검증합니다."""
+    """Audit the 5 MIT skills for license, metadata caps, and 0-byte weight rules.
+
+    5대 MIT 스킬의 라이선스, 메타데이터 길이 및 가중치 0바이트 컴플라이언스를 검증합니다.
+    """
     root = Path(skills_dir)
     errors: list[str] = []
 
