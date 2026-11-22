@@ -1,13 +1,13 @@
 ---
 name: sovereign-system-architect
-description: Interactive sovereign execution architecture scaffold designer for AlphaGraph local runtime, HyperAlpha-VLA backbone, and AlphaSmith Foundry compilation. Generates compliant code skeletons without any buy/sell recommendations.
+description: Interactive sovereign execution architecture scaffold designer for AlphaGraph local runtime, ZeroSteer backbone, and AlphaSmith Foundry compilation. Generates compliant code skeletons without any buy/sell recommendations.
 license: MIT
 ---
 
 # Sovereign System Architect
 
 ## When to Use
-Use this skill when designing or scaffolding a customer's sovereign local trading runtime built on the ZeroStreet B2A stack (`zerostreet-schema`, `hyperalpha-vla`, `alphagraph`, and `alphasmith`).
+Use this skill when designing or scaffolding a customer's sovereign local trading runtime built on the ZeroStreet B2A stack (`zerostreet-schema`, `zerosteer`, `alphagraph`, and `alphasmith`).
 
 ## Architecture & Compliance Rules
 1. **Zero Investment Advisory**: Never recommend specific stocks, cryptocurrencies, buy/sell actions, or price targets. All runtime targets (`target_universe`), reward weights (`RLRewardWeights`), and risk thresholds (`UserPolicyConfig`) must be explicitly specified or approved by the user.
