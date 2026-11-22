@@ -2,25 +2,25 @@
   "schemaVersion": 1,
   "pages": {
     "/openwiki/architecture/skills-and-architect-agent.md": {
+      "gitHead": "53f274eebf70ae405ba61eced27d6cd8ecb2ea5d",
+      "sourceFingerprint": "sha256:a9a798a13b5958f26ad48c068185f56ec81dff80fb72382fa627e303411a910d",
       "pageVersion": "sha256:a13b3612c1d6da35db55dd439bf0a167c982de06660005cf453be4a46c0412d4",
       "completedBy": "antigravity",
-      "completedRunId": "7064b74b-8dc1-47f7-ad1f-7566d470f0e2",
-      "gitHead": "53f274eebf70ae405ba61eced27d6cd8ecb2ea5d",
-      "sourceFingerprint": "sha256:a9a798a13b5958f26ad48c068185f56ec81dff80fb72382fa627e303411a910d"
+      "completedRunId": "7064b74b-8dc1-47f7-ad1f-7566d470f0e2"
     },
     "/openwiki/quickstart.md": {
-      "pageVersion": "sha256:c33626aa05ea5c754f90a13980f383df13f90848466a8a6896a780fe9167e418",
+      "pageVersion": "sha256:4629f456b8977ecaeacf70e09b6cb78547e4168367a7ca8c233a7c89b999a956",
       "completedBy": "antigravity",
-      "completedRunId": "7064b74b-8dc1-47f7-ad1f-7566d470f0e2",
-      "gitHead": "53f274eebf70ae405ba61eced27d6cd8ecb2ea5d",
-      "sourceFingerprint": "sha256:a9a798a13b5958f26ad48c068185f56ec81dff80fb72382fa627e303411a910d"
+      "completedRunId": "f14de8d9-5c6d-4fd7-9eac-26d229cb3286",
+      "gitHead": "a0e4605cb8733ab5f3c7edd0eb3669fc9437ebbc",
+      "sourceFingerprint": "sha256:b363f190b4ec0267dd1c436f7c2547fa2db42e98309ac93d33dfbee540602c35"
     },
     "/openwiki/workflows/foundry-mcp-scaffolding.md": {
+      "gitHead": "53f274eebf70ae405ba61eced27d6cd8ecb2ea5d",
+      "sourceFingerprint": "sha256:a9a798a13b5958f26ad48c068185f56ec81dff80fb72382fa627e303411a910d",
       "pageVersion": "sha256:765485729a32c8fadc3ac24e3a30b67e8ae3485d355acfe095824b21e3acaebb",
       "completedBy": "antigravity",
-      "completedRunId": "7064b74b-8dc1-47f7-ad1f-7566d470f0e2",
-      "gitHead": "53f274eebf70ae405ba61eced27d6cd8ecb2ea5d",
-      "sourceFingerprint": "sha256:a9a798a13b5958f26ad48c068185f56ec81dff80fb72382fa627e303411a910d"
+      "completedRunId": "7064b74b-8dc1-47f7-ad1f-7566d470f0e2"
     }
   }
 }
