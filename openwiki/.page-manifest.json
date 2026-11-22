@@ -2,25 +2,25 @@
   "schemaVersion": 1,
   "pages": {
     "/openwiki/architecture/skills-and-architect-agent.md": {
-      "pageVersion": "sha256:94ae6b7ea82ca7f91ffeea82557f4895f3c1e812a22f5164f0e2570602dfd473",
+      "pageVersion": "sha256:3102d092ceb18f540d3cbe3f6c8ea6b9eef204eebc49e26e85a77618e22df87c",
       "completedBy": "antigravity",
-      "completedRunId": "baf04b69-b43a-45b3-9fb7-8da9321de3ac",
-      "gitHead": "4938e5490995af67b5d338a83ba06ba5163d49ea",
-      "sourceFingerprint": "sha256:30cd24436381e1b794a0d189acf5e0a00237a55f98badfd3f86c7fe82b6d33c1"
+      "completedRunId": "7b9cba23-9098-479c-b713-556a4779b5e7",
+      "gitHead": "ed316b70d2a2b81c2c86dc611451a32961d1d4b8",
+      "sourceFingerprint": "sha256:7aaa8e554918b5c680614c0cca255bd030537f8c3fe530ef019cf89d7f8d28c1"
     },
     "/openwiki/quickstart.md": {
-      "gitHead": "a0e4605cb8733ab5f3c7edd0eb3669fc9437ebbc",
-      "sourceFingerprint": "sha256:b363f190b4ec0267dd1c436f7c2547fa2db42e98309ac93d33dfbee540602c35",
-      "pageVersion": "sha256:4629f456b8977ecaeacf70e09b6cb78547e4168367a7ca8c233a7c89b999a956",
+      "pageVersion": "sha256:6eb688504100f9957f87a27709aede16127f533574c9ee59ef1c5a8011ab9058",
       "completedBy": "antigravity",
-      "completedRunId": "f14de8d9-5c6d-4fd7-9eac-26d229cb3286"
+      "completedRunId": "7b9cba23-9098-479c-b713-556a4779b5e7",
+      "gitHead": "ed316b70d2a2b81c2c86dc611451a32961d1d4b8",
+      "sourceFingerprint": "sha256:7aaa8e554918b5c680614c0cca255bd030537f8c3fe530ef019cf89d7f8d28c1"
     },
     "/openwiki/workflows/foundry-mcp-scaffolding.md": {
-      "gitHead": "53f274eebf70ae405ba61eced27d6cd8ecb2ea5d",
-      "sourceFingerprint": "sha256:a9a798a13b5958f26ad48c068185f56ec81dff80fb72382fa627e303411a910d",
-      "pageVersion": "sha256:765485729a32c8fadc3ac24e3a30b67e8ae3485d355acfe095824b21e3acaebb",
+      "pageVersion": "sha256:0e05225c1b67634be4c34c8cbdefd8d184fd397b8e6b358718646b9a475ec8ce",
       "completedBy": "antigravity",
-      "completedRunId": "7064b74b-8dc1-47f7-ad1f-7566d470f0e2"
+      "completedRunId": "7b9cba23-9098-479c-b713-556a4779b5e7",
+      "gitHead": "ed316b70d2a2b81c2c86dc611451a32961d1d4b8",
+      "sourceFingerprint": "sha256:7aaa8e554918b5c680614c0cca255bd030537f8c3fe530ef019cf89d7f8d28c1"
     }
   }
 }

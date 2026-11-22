@@ -1,17 +1,11 @@
 ---
 type: quickstart
-title: zerostreet-skills Quickstart & Business Overview / zerostreet-skills 빠른 시작 및 비즈니스 개요
-description: Introduces the top-of-funnel B2A growth role, 5 MIT Agent Skills, Foundry MCP setup, and DeepAgents Architect for zerostreet-skills. ZeroStreet MIT Agent Skills, Foundry MCP 서버, DeepAgents Architect의 비즈니스 역할 및 설정 맵을 안내합니다.
-tags:
-  - quickstart
-  - zerostreet-skills
-  - mcp
-  - deepagents
-  - business-context
-  - zerolens
+title: zerostreet-skills v0.1.0 개요 및 빠른 시작
+description: 코딩 에이전트(Claude Desktop, Cursor, Antigravity)가 안전하게 투자 시스템을 설계하고 Foundry MCP를 연동할 수 있도록 돕는 zerostreet-skills v0.1.0의 소비자 가치와 구조를 한국어로 안내합니다.
+tags: [quickstart, zerostreet-skills, mcp, deepagents, agent-skills]
 verified:
   - by: openwiki/0.7.2
-    at: 2026-11-22T09:12:27.272Z
+    at: 2026-11-22T13:08:15.756Z
 sources:
   - id: openwiki-source-d271781df50b232396052753
     resource: repo://claude_desktop_config.example.json
@@ -21,48 +15,50 @@ sources:
     resource: repo://README.md
   - id: openwiki-source-8fed81e51001634cf0ad976d
     resource: repo://src/zerostreet_skills/__init__.py
-generated: { by: "antigravity", at: "2026-11-22T09:12:27.272Z" }
+generated: { by: "antigravity", at: "2026-11-22T13:08:15.756Z" }
 ---
 
-# zerostreet-skills Quickstart & Business Overview / 빠른 시작 및 비즈니스 개요
+# zerostreet-skills v0.1.0 개요 및 빠른 시작
 
-`zerostreet-skills` (`0.1.0`, MIT) is the open-source Layer 0.5 B2A onboarding package for **ZeroStreet (`주식회사 제로스트리트`)**, providing **5 Agent Skills (`skills/`)**, the **Foundry MCP server (`zerostreet-foundry-mcp`)**, and the **DeepAgents Build-Time Architect Agent** ([`__init__.py`](../src/zerostreet_skills/__init__.py)).
+## 왜 이 프로젝트가 필요한가요? (비즈니스 역할 및 소비자 가치)
 
-`zerostreet-skills` (`0.1.0`)는 `주식회사 제로스트리트` B2A 스택의 오픈소스(MIT) 온보딩 패키지로, **5대 Agent Skills**, **Foundry MCP 서버**, 및 **DeepAgents Build-Time Architect**를 제공합니다.
+`zerostreet-skills`(`v0.1.0`, Public MIT)는 주식회사 제로스트리트(ZeroStreet Inc.)의 **Layer 0.5 에이전트 온보딩 패키지**입니다([`__init__.py`](../src/zerostreet_skills/__init__.py#L1-L41)). 투자자가 Claude Desktop이나 Antigravity 같은 코딩 도우미를 이용해 나만의 자동 투자 시스템을 꾸리려 할 때 흔히 겪는 두 가지 불안을 해소합니다.
 
----
-
-## Business Role & Value Proposition / 비즈니스 역할 및 가치
-
-### English
-
-* **Top-of-Funnel B2A Growth Engine (`Layer 0.5`)**: Installs directly into coding agents (Claude Code, Codex, Antigravity, OpenClaw), converting the user's own assistant into a ZeroStreet system integrator.
-* **Natural Conversion Funnel to AlphaSmith Foundry**: Guided by 5 progressive-disclosure skills and 6 MCP tools, customer agents validate risk rules, simulate macro crises, generate `alphagraph` runtime scaffolds, and pause for human approval before calling paid `AlphaSmith` GPU compilation and subscribing to `ZeroLens` representations.
-* **Compliance & 0-Byte Weights**: Contains **0 bytes** of vendor policy weights and restricts every playbook to Descriptive Analytics and engineering scaffolding without stock/trade recommendations ([`README.md`](../README.md)).
-
-### 한국어
-
-* **B2A 최상단 유입(Top-of-Funnel) 성장 엔진**: Claude Code·Codex·Antigravity·OpenClaw 등 코딩 에이전트에 즉시 장착되어, 고객 에이전트가 스스로 ZeroStreet 아키텍처 설계 및 통합 엔지니어 역할을 수행하도록 합니다.
-* **AlphaSmith 유료 파운드리 전환 퍼널**: 5대 스킬과 MCP 툴을 통해 리스크 규칙·위기 리플레이·런타임 스캐폴드를 자동 생성한 뒤 HITL 승인을 거쳐 유료 `AlphaSmith` GPU 컴파일 및 `ZeroLens` 구독으로 연결합니다.
-* **규제·가중치 0바이트 원칙**: 회사 자체 학습 가중치 0바이트를 유지하며 종목 매수/매도 추천 없이 서술적 분석과 코드 스캐폴딩만 제공합니다.
+1. **AI 코딩 도우미가 리스크 검증 없이 허술한 매매 설정을 만들어 줄까 걱정됩니다.**  
+   5종의 MIT 에이전트 스킬(`SKILL.md`)이 리밸런싱 수학 정합성, 사전 리스크 게이트, 거시 위기 시뮬레이션 체크리스트를 단계별(Progressive Disclosure)로 제공해, 에이전트가 반드시 검증된 안전 규칙을 따르게 합니다.
+2. **클라우드 파운드리와 로컬 실행 데몬 설정을 수작업으로 맞추기 번거롭습니다.**  
+   `MCPServer`(`zerostreet-foundry-mcp`)가 `UserPolicyConfig` 검증, `alphasmith` 위기 리플레이·GPU 파운드리 컴파일 요청, 그리고 회사 가중치가 전혀 섞이지 않은(`contains_company_weights=False`) 로컬 `alphagraph` 청사진 생성까지 6가지 도구로 깔끔히 연결해 줍니다. 물론 이 저장소에도 **회사 자체 매매 가중치는 0바이트**만 유지됩니다([README.md](../README.md#L1-L72)).
 
 ---
 
-## 1. Package Components & MCP Client Setup / 패키지 구성 및 MCP 연동
+## 빌드타임 아키텍트 · MCP 연결 흐름
 
-| Component / 구성 요소 | Role / 역할 | Path / 경로 |
+```mermaid
+flowchart LR
+    DEV["투자자 · AI 코딩 에이전트"] -->|"stdio MCP"| MCP["zerostreet-foundry MCPServer"]
+    MCP --> REG["skill_registry.py (5대 MIT 스킬 로딩)"]
+    MCP --> POL["build_user_policy_config (zerostreet-schema 검증)"]
+    POL --> ASM["submit_foundry_compile_job 및 run_crisis_replay (alphasmith 연동)"]
+    POL --> LOC["scaffold_sovereign_runtime_manifest (가중치 0바이트 로컬 설정)"]
+    ARCH["architect_agent.py (CompositeBackend + HITL 인터럽트)"] --> REG
+    ARCH --> POL
+```
+
+---
+
+## 패키지 구성 요소 및 MCP 연동 (`src/zerostreet_skills/`)
+
+| 구성 요소 | 핵심 기능 | 파일 경로 |
 | :--- | :--- | :--- |
-| `pyproject.toml` | `mcp[cli]`, `deepagents`, `zerostreet-schema` deps & `zerostreet-foundry-mcp` CLI / 의존성·스크립트 정의 | [pyproject.toml](../pyproject.toml) |
-| `claude_desktop_config.example.json` | Sample MCP client config using `uv` and env vars / Claude Desktop 연동 템플릿 | [claude_desktop_config.example.json](../claude_desktop_config.example.json) |
-| `skill_registry.py` | 5 `SKILL.md` progressive disclosure loader & audit / 5대 스킬 로딩·규제 검증 | [skill_registry.py](../src/zerostreet_skills/skill_registry.py) |
-| `foundry_mcp.py` | `MCPServer` 6 tools & `AlphaSmithFoundryClient` / MCP 6종 툴 및 클라이언트 | [foundry_mcp.py](../src/zerostreet_skills/foundry_mcp.py) |
-| `architect_agent.py` | `CompositeBackend` (`/skills/`) + `HumanInTheLoopMiddleware` / 아키텍트 빌더 | [architect_agent.py](../src/zerostreet_skills/architect_agent.py) |
-
-See [`claude_desktop_config.example.json`](../claude_desktop_config.example.json) to register `uv --directory /path/to/zerostreet-skills run zerostreet-foundry-mcp` with `ALPHASMITH_BASE_URL` and `ZEROSTREET_API_KEY`.
+| **`pyproject.toml`** | `mcp[cli]`, `deepagents`, `langchain-core`, `langgraph`, `zerostreet-schema` 의존성 및 `zerostreet-foundry-mcp` 스크립트 정의 | [`pyproject.toml`](../pyproject.toml#L1-L48) |
+| **`claude_desktop_config.example.json`** | `uv --directory /path/to/zerostreet-skills run zerostreet-foundry-mcp` 실행과 `ALPHASMITH_BASE_URL` · `ZEROSTREET_API_KEY` 등록 예시 | [`claude_desktop_config.example.json`](../claude_desktop_config.example.json#L1-L17) |
+| **`skill_registry.py`** | 5대 `SKILL.md` 점진적 로딩(`discover_skills`, `load_skill_markdown`) 및 규제 검사(`validate_skills_compliance`) | [`skill_registry.py`](../src/zerostreet_skills/skill_registry.py#L1-L143) |
+| **`foundry_mcp.py`** | `MCPServer` 6종 도구 및 `AlphaSmithFoundryClient` | [`foundry_mcp.py`](../src/zerostreet_skills/foundry_mcp.py#L1-L280) |
+| **`architect_agent.py`** | `/skills/` 가상 파일시스템(`CompositeBackend`) 및 유료 컴파일 전 HITL(`HumanInTheLoopMiddleware`) 아키텍트 | [`architect_agent.py`](../src/zerostreet_skills/architect_agent.py#L1-L205) |
 
 ---
 
-## 2. Local Verification / 로컬 개발 및 검증 실행
+## 로컬 설치 및 검증
 
 ```bash
 uv sync --dev
@@ -72,7 +68,8 @@ uv run pytest -q
 
 ---
 
-## 3. OpenWiki Documentation Routing Map / OpenWiki 문서 라우팅 맵
+## 세부 문서 바로가기
 
-* [Agent Skills & DeepAgents Architect Architecture / 5대 스킬 및 Architect 아키텍처](./architecture/skills-and-architect-agent.md) — 5 `SKILL.md` files, `validate_skills_compliance`, `CompositeBackend`, and `interrupt_on`
-* [Foundry MCP Server & Sovereign Scaffolding Workflow / Foundry MCP 및 스캐폴딩 워크플로우](./workflows/foundry-mcp-scaffolding.md) — 6 `MCPServer` tools, `AlphaSmithFoundryClient`, schema validation, and scaffolding
+- [5대 에이전트 스킬 및 DeepAgents 아키텍트 구조](./architecture/skills-and-architect-agent.md)
+- [Foundry MCP 서버 및 로컬 런타임 스캐폴딩 워크플로우](./workflows/foundry-mcp-scaffolding.md)
+- [대문 안내 (한국어)](../README.md) · [English README](../README.en.md)
