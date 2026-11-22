@@ -2587,28 +2587,7 @@ wheels = [
 ]
 
 [[package]]
-name = "zerostreet-schema"
-version = "0.2.0"
-source = { editable = "../zerostreet-schema" }
-dependencies = [
-    { name = "loguru" },
-    { name = "pydantic" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "loguru", specifier = ">=0.7.2" },
-    { name = "pydantic", specifier = ">=2.7.0" },
-]
-
-[package.metadata.requires-dev]
-dev = [
-    { name = "pytest", specifier = ">=8.0.0" },
-    { name = "ruff", specifier = ">=0.6.0" },
-]
-
-[[package]]
-name = "zerostreet-skills"
+name = "zerostreet-mcp"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [
@@ -2640,6 +2619,27 @@ requires-dist = [
     { name = "pydantic", specifier = ">=2.7.0" },
     { name = "pyyaml", specifier = ">=6.0.1" },
     { name = "zerostreet-schema", editable = "../zerostreet-schema" },
+]
+
+[package.metadata.requires-dev]
+dev = [
+    { name = "pytest", specifier = ">=8.0.0" },
+    { name = "ruff", specifier = ">=0.6.0" },
+]
+
+[[package]]
+name = "zerostreet-schema"
+version = "0.2.0"
+source = { editable = "../zerostreet-schema" }
+dependencies = [
+    { name = "loguru" },
+    { name = "pydantic" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "loguru", specifier = ">=0.7.2" },
+    { name = "pydantic", specifier = ">=2.7.0" },
 ]
 
 [package.metadata.requires-dev]

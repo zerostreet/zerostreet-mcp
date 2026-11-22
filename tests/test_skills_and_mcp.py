@@ -17,7 +17,7 @@ from langgraph.types import Command
 from pydantic import Field
 from zerostreet_schema import PolicyCompileRequest
 
-from zerostreet_skills import (
+from zerostreet_mcp import (
     EXPECTED_SKILL_NAMES,
     AlphaSmithFoundryClient,
     build_validated_policy_config,
@@ -99,6 +99,7 @@ def test_skill_registry_discovery_and_compliance() -> None:
 
 def test_foundry_mcp_tools_and_mock_transport() -> None:
     assert isinstance(mcp_server, FastMCP)
+    assert mcp_server.name == "zerostreet-mcp"
     tools = asyncio.run(mcp_server.list_tools())
     tool_names = {t.name for t in tools}
     expected_tools = {

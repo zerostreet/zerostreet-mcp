@@ -3,10 +3,10 @@
 ZeroStreet Build-Time 온보딩용 DeepAgents Architect Agent 빌더 모듈입니다.
 
 Verified against deepagents==0.7.41 & langchain==1.5.2 installed in `.venv`:
-- file:///Users/kimyoungh/alphaknow/zerostreet-repos/zerostreet-skills/.venv/lib/python3.11/site-packages/deepagents/graph.py
-- file:///Users/kimyoungh/alphaknow/zerostreet-repos/zerostreet-skills/.venv/lib/python3.11/site-packages/deepagents/middleware/skills.py
-- file:///Users/kimyoungh/alphaknow/zerostreet-repos/zerostreet-skills/.venv/lib/python3.11/site-packages/deepagents/backends/composite.py
-- file:///Users/kimyoungh/alphaknow/zerostreet-repos/zerostreet-skills/.venv/lib/python3.11/site-packages/langchain/agents/middleware/human_in_the_loop.py
+- file:///Users/kimyoungh/alphaknow/zerostreet-repos/zerostreet-mcp/.venv/lib/python3.11/site-packages/deepagents/graph.py
+- file:///Users/kimyoungh/alphaknow/zerostreet-repos/zerostreet-mcp/.venv/lib/python3.11/site-packages/deepagents/middleware/skills.py
+- file:///Users/kimyoungh/alphaknow/zerostreet-repos/zerostreet-mcp/.venv/lib/python3.11/site-packages/deepagents/backends/composite.py
+- file:///Users/kimyoungh/alphaknow/zerostreet-repos/zerostreet-mcp/.venv/lib/python3.11/site-packages/langchain/agents/middleware/human_in_the_loop.py
 """
 
 from pathlib import Path
@@ -20,12 +20,12 @@ from langchain_core.tools import BaseTool, tool
 from langgraph.checkpoint.memory import InMemorySaver
 from zerostreet_schema import PolicyCompileRequest, SubscriptionTier
 
-from zerostreet_skills.foundry_mcp import (
+from zerostreet_mcp.foundry_mcp import (
     AlphaSmithFoundryClient,
     build_validated_policy_config,
     generate_sovereign_scaffold_manifest,
 )
-from zerostreet_skills.skill_registry import DEFAULT_SKILLS_DIR
+from zerostreet_mcp.skill_registry import DEFAULT_SKILLS_DIR
 
 ARCHITECT_SYSTEM_PROMPT = """You are the ZeroStreet Sovereign System Architect \
 (Build-Time Onboarding Agent).

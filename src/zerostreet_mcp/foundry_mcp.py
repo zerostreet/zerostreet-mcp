@@ -18,7 +18,7 @@ from zerostreet_schema import (
     UserPolicyConfig,
 )
 
-from zerostreet_skills.skill_registry import discover_skills, load_skill_markdown
+from zerostreet_mcp.skill_registry import discover_skills, load_skill_markdown
 
 
 class AlphaSmithFoundryClient:
@@ -144,9 +144,9 @@ def generate_sovereign_scaffold_manifest(
 
 
 mcp_server = FastMCP(
-    name="zerostreet-foundry",
+    name="zerostreet-mcp",
     instructions=(
-        "ZeroStreet B2A Foundry MCP Server. Provide non-advisory engineering scaffolding, "
+        "ZeroStreet FastMCP Server. Provide non-advisory engineering scaffolding, "
         "Agent Skills inspection, user-supplied RL policy compilation, and crisis replay."
     ),
 )
@@ -268,11 +268,11 @@ def scaffold_sovereign_runtime_manifest(
 
 
 def main() -> None:
-    """Run ZeroStreet Foundry FastMCP server over stdio transport.
+    """Run ZeroStreet FastMCP server over stdio transport.
 
-    stdio 전송 방식으로 ZeroStreet Foundry FastMCP 서버를 실행합니다.
+    stdio 전송 방식으로 ZeroStreet FastMCP 서버를 실행합니다.
     """
-    logger.info("Starting ZeroStreet Foundry FastMCP server (stdio transport)")
+    logger.info("Starting ZeroStreet FastMCP server (stdio transport)")
     mcp_server.run(transport="stdio", show_banner=False)
 
 

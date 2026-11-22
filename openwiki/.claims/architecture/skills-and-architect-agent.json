@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:3102d092ceb18f540d3cbe3f6c8ea6b9eef204eebc49e26e85a77618e22df87c",
+  "pageVersion": "sha256:f1c49b4009cb5609f0b3f844d1286d6cdbe15ff58ea649361b2aa224dffc3536",
   "claims": [
     {
       "id": "claim_716dcca23d9546cfa7ab05081bc1a9da",
-      "statement": "zerostreet-skills ships 5 MIT Agent Skills (sovereign-system-architect, portfolio-risk-audit, pre-trade-risk-gate, macro-crisis-sim, rebalance-math-solver) restricted to descriptive analytics and engineering scaffolding without buy/sell advice or model weights.",
+      "statement": "zerostreet-mcp는 매매 추천이나 모델 가중치 없이 서술 분석과 스캐폴딩으로만 제한된 5종 MIT 에이전트 스킬(sovereign-system-architect, portfolio-risk-audit, pre-trade-risk-gate, macro-crisis-sim, rebalance-math-solver)을 기본 내장합니다.",
       "evidence": [
         {
           "resource": "repo://skills/macro-crisis-sim/SKILL.md#L1-L25",
@@ -30,27 +30,27 @@
     },
     {
       "id": "claim_1e5c20f3ae7147e49eb425462ab4095d",
-      "statement": "skill_registry implements Progressive Disclosure loading (discover_skills, load_skill_markdown with path-traversal rejection) and validate_skills_compliance checking MIT license, name/description length caps, and zero binary weight files.",
+      "statement": "src/zerostreet_mcp/skill_registry.py는 2단계 점진적 로딩(discover_skills, 경로 탈출 거부 포함 load_skill_markdown)과 MIT 라이선스·길이 제한·바이너리 가중치 0건을 검증하는 validate_skills_compliance를 제공합니다.",
       "evidence": [
         {
-          "resource": "repo://src/zerostreet_skills/skill_registry.py#L1-L143",
+          "resource": "repo://src/zerostreet_mcp/skill_registry.py#L1-L143",
           "version": "repo-lines-v1:sha256:f2984a00621980457f593cb4099318b944f582c897838485c89b0150016ee6d5:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQzLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIwNDIxMzNjYmZhZGZmYzhjNzY5ODA1MTZlOTI1NTk0ZjVkMGMxM2NmMTg4YjRmNjE2YjI4ZTUzYzJkYWJhYWU4IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI3NmFmN2MyYWMyMjc5NjBmY2Q1YzNjYzg4MGQ1YjA4Y2ZiMzk3MTEyZGE4MTBiZjc1YzNmNGViYWEzYTM3ZTVkIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MCwicHJlY2VkaW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
         }
       ]
     },
     {
       "id": "claim_a501518c4670425e81c04be5e744d620",
-      "statement": "create_zerostreet_architect_agent wires create_deep_agent with a CompositeBackend mounting skills at /skills/, a risk-audit-reviewer SubAgent, explicit model enforcement, InMemorySaver checkpointer, and interrupt_on gating for submit_foundry_compile_job.",
+      "statement": "src/zerostreet_mcp/architect_agent.py의 create_zerostreet_architect_agent는 CompositeBackend(/skills/ 마운트), risk-audit-reviewer SubAgent, 명시적 모델 강제, InMemorySaver, 그리고 submit_foundry_compile_job에 대한 interrupt_on HITL 게이트를 조합해 create_deep_agent를 구성합니다.",
       "evidence": [
         {
-          "resource": "repo://src/zerostreet_skills/architect_agent.py#L1-L205",
-          "version": "repo-lines-v1:sha256:88657298ca0d4d96b23cdf17cdddf658dedec896a44baf2533e80f581a34a18d:eyJzZWxlY3RlZExpbmVDb3VudCI6MjA1LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIzNTRlOWNmODY2MDM5NTI4MmRmNmRiZTA1MGM0ZmEzODVmOWQ5MDBjZjc5NTE1OWJjZTNjNmYxOTA4ZDdhYWZmIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIzMGMxZjE4OGYxNDJlZDdhODI0NjgwYjIwNzE3MmM1NTE5YmM2MTRhNDhmZGE3Y2YxNjdlZGI4ZGRmNzk5NTZjIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MCwicHJlY2VkaW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
+          "resource": "repo://src/zerostreet_mcp/architect_agent.py#L1-L205",
+          "version": "repo-lines-v1:sha256:8f0bec929b8ff492b0aae6212297550b3c1643221f73df69501c66b26b6527b2:eyJzZWxlY3RlZExpbmVDb3VudCI6MjA1LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIzNTRlOWNmODY2MDM5NTI4MmRmNmRiZTA1MGM0ZmEzODVmOWQ5MDBjZjc5NTE1OWJjZTNjNmYxOTA4ZDdhYWZmIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIzMGMxZjE4OGYxNDJlZDdhODI0NjgwYjIwNzE3MmM1NTE5YmM2MTRhNDhmZGE3Y2YxNjdlZGI4ZGRmNzk5NTZjIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MCwicHJlY2VkaW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
         }
       ]
     }
   ],
   "verification": {
     "by": "openwiki/0.7.2",
-    "at": "2026-11-22T13:08:15.756Z"
+    "at": "2026-11-22T13:32:58.010Z"
   }
 }

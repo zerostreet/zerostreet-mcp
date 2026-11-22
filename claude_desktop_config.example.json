@@ -1,12 +1,12 @@
 {
   "mcpServers": {
-    "zerostreet-foundry": {
+    "zerostreet-mcp": {
       "command": "uv",
       "args": [
         "--directory",
-        "/path/to/zerostreet-skills",
+        "/path/to/zerostreet-mcp",
         "run",
-        "zerostreet-foundry-mcp"
+        "zerostreet-mcp"
       ],
       "env": {
         "ALPHASMITH_BASE_URL": "http://127.0.0.1:8000",

@@ -11,7 +11,7 @@
    - `openwiki/quickstart.md`는 `# 제목` 바로 아래에 **`## 왜 이 프로젝트가 필요한가요? (비즈니스 역할 및 소비자 가치)`** 섹션을 가장 먼저 배치해, 투자자가 왜 에이전트 스킬과 Foundry MCP를 통해 코딩 없이 안전하게 로컬 데몬을 설계·검증할 수 있는지 직관적으로 설명합니다.
 
 3. **저장소 내부 상대 경로 링크만 사용 (Intra-Repo Relative Links Only) 및 안전한 Mermaid**:
-   - 위키 내 링크는 반드시 **같은 저장소 안을 가리키는 상대 경로**만 사용합니다 (예: `./architecture/skills-and-architect-agent.md`, `../quickstart.md`, `../src/zerostreet_skills/foundry_mcp.py`).
+   - 위키 내 링크는 반드시 **같은 저장소 안을 가리키는 상대 경로**만 사용합니다 (예: `./architecture/skills-and-architect-agent.md`, `../quickstart.md`, `../src/zerostreet_mcp/foundry_mcp.py`).
    - `/openwiki/...` 루트 절대 경로나 바깥 저장소로 나가는 상대 링크를 절대 쓰지 마십시오. 형제 저장소는 백틱(예: `` `alphasmith` ``)으로 표기합니다.
    - Mermaid 도식의 모든 노드 라벨은 큰따옴표(`id["..."]`)로 감싸고, `->`, `<=`, `<`, `>`, HTML 태그(`<br/>` 등)를 라벨 안에 넣지 마십시오.
 
