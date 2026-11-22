@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:8226175879780d80c6834c07dde825c0c6dad29286fde93ada5d2263fcc2de3f",
+  "pageVersion": "sha256:a13b3612c1d6da35db55dd439bf0a167c982de06660005cf453be4a46c0412d4",
   "claims": [
     {
       "id": "claim_716dcca23d9546cfa7ab05081bc1a9da",
@@ -33,8 +33,8 @@
       "statement": "skill_registry implements Progressive Disclosure loading (discover_skills, load_skill_markdown with path-traversal rejection) and validate_skills_compliance checking MIT license, name/description length caps, and zero binary weight files.",
       "evidence": [
         {
-          "resource": "repo://src/zerostreet_skills/skill_registry.py#L1-L128",
-          "version": "repo-lines-v1:sha256:c94709af84458bdfea765b6ef97d4405df51bc350c5e789613063a92d3b67cd9:eyJzZWxlY3RlZExpbmVDb3VudCI6MTI4LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJlM2Y0NzMxZDBjNmIyYTE1Y2NlYzAyZWVkYmNiMjY0OTJmYTVhYzg4NTkwNDczNGIzZTU0ZjFkOTgyODU2YzQ4IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI3NmFmN2MyYWMyMjc5NjBmY2Q1YzNjYzg4MGQ1YjA4Y2ZiMzk3MTEyZGE4MTBiZjc1YzNmNGViYWEzYTM3ZTVkIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MCwicHJlY2VkaW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
+          "resource": "repo://src/zerostreet_skills/skill_registry.py#L1-L143",
+          "version": "repo-lines-v1:sha256:f2984a00621980457f593cb4099318b944f582c897838485c89b0150016ee6d5:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQzLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIwNDIxMzNjYmZhZGZmYzhjNzY5ODA1MTZlOTI1NTk0ZjVkMGMxM2NmMTg4YjRmNjE2YjI4ZTUzYzJkYWJhYWU4IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI3NmFmN2MyYWMyMjc5NjBmY2Q1YzNjYzg4MGQ1YjA4Y2ZiMzk3MTEyZGE4MTBiZjc1YzNmNGViYWEzYTM3ZTVkIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MCwicHJlY2VkaW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
         }
       ]
     },
@@ -43,14 +43,14 @@
       "statement": "create_zerostreet_architect_agent wires create_deep_agent with a CompositeBackend mounting skills at /skills/, a risk-audit-reviewer SubAgent, explicit model enforcement, InMemorySaver checkpointer, and interrupt_on gating for submit_foundry_compile_job.",
       "evidence": [
         {
-          "resource": "repo://src/zerostreet_skills/architect_agent.py#L1-L188",
-          "version": "repo-lines-v1:sha256:33595f9c1d97b4d283ac87dae5a3a72e002a664ced243fe12e5f6be3ca79f669:eyJzZWxlY3RlZExpbmVDb3VudCI6MTg4LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI2NGQ2YjI5OTU4ODU3NGJkYTE5ZmZlYzc1NjUwYTRiZDZlNGQxOWFlOTkxZWMxNzJkY2MyOTE3MDU4Y2RmOTM4IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIzMGMxZjE4OGYxNDJlZDdhODI0NjgwYjIwNzE3MmM1NTE5YmM2MTRhNDhmZGE3Y2YxNjdlZGI4ZGRmNzk5NTZjIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MCwicHJlY2VkaW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
+          "resource": "repo://src/zerostreet_skills/architect_agent.py#L1-L205",
+          "version": "repo-lines-v1:sha256:88657298ca0d4d96b23cdf17cdddf658dedec896a44baf2533e80f581a34a18d:eyJzZWxlY3RlZExpbmVDb3VudCI6MjA1LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIzNTRlOWNmODY2MDM5NTI4MmRmNmRiZTA1MGM0ZmEzODVmOWQ5MDBjZjc5NTE1OWJjZTNjNmYxOTA4ZDdhYWZmIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIzMGMxZjE4OGYxNDJlZDdhODI0NjgwYjIwNzE3MmM1NTE5YmM2MTRhNDhmZGE3Y2YxNjdlZGI4ZGRmNzk5NTZjIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MCwicHJlY2VkaW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
         }
       ]
     }
   ],
   "verification": {
     "by": "openwiki/0.7.2",
-    "at": "2026-11-21T17:30:29.653Z"
+    "at": "2026-11-22T03:46:58.038Z"
   }
 }
