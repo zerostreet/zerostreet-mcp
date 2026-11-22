@@ -1,44 +1,44 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:0e05225c1b67634be4c34c8cbdefd8d184fd397b8e6b358718646b9a475ec8ce",
+  "pageVersion": "sha256:0b9e2441fbf8babb8ce05e695b0fa2b6c0fd2d2f5dac6240bd22ed0623ec50d8",
   "claims": [
     {
       "id": "claim_572e7de2e6c4439ba594a1b7c716123b",
-      "statement": "foundry_mcp instantiates mcp.server.mcpserver.MCPServer (mcp>=2.0) named zerostreet-foundry and exposes 6 tools: list_zerostreet_skills, read_zerostreet_skill, build_user_policy_config, submit_foundry_compile_job, run_crisis_replay, and scaffold_sovereign_runtime_manifest, running via stdio in main().",
+      "statement": "foundry_mcp는 fastmcp>=4.0의 FastMCP 인스턴스(zerostreet-foundry)를 생성해 list_zerostreet_skills, read_zerostreet_skill, build_user_policy_config, submit_foundry_compile_job, run_crisis_replay, scaffold_sovereign_runtime_manifest 6개 도구를 노출하고 main()에서 show_banner=False로 stdio 전송을 실행합니다.",
       "evidence": [
         {
           "resource": "repo://src/zerostreet_skills/foundry_mcp.py#L1-L280",
-          "version": "repo-lines-v1:sha256:8e6a86277ee7cafd4a5f617d3ee050a79ab1c8a10fde73db80b9b1a6fee8d13d:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgwLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJkMzAyYWU3NjI4Nzg2ZDM2OTEyZmI3ZmZiZDc1NWU1ZTY5MDhkMzhmY2QwYjA1ZGYzYzdlOWRkYjdjMDE4MjQ4IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIxOGU5OTIzMmNkM2EzMDlmNTBjYmQ2ZjY2MjEyN2VlYWFmY2UxZjczNjI5MmRlZmIxMTNkOTgxYTIwYzdkODUyIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MCwicHJlY2VkaW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
+          "version": "repo-lines-v1:sha256:e8c43b4364155f2a8755dcbcdcbc0104a9ccc288942b79ac0e1a2fe718bbc5d8:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgwLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI1MWI0NGJhMzUwNGM2ZGE2NTgwM2RhOWY1OGI0OGZiY2JkNTQzNjk2NmU0ZmY1OTYyMWY0Y2RmMTVlYzZkNjg3IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIxOGU5OTIzMmNkM2EzMDlmNTBjYmQ2ZjY2MjEyN2VlYWFmY2UxZjczNjI5MmRlZmIxMTNkOTgxYTIwYzdkODUyIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MCwicHJlY2VkaW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
         }
       ]
     },
     {
       "id": "claim_a1fae18a053d40f5ac1b00bfa835eea9",
-      "statement": "AlphaSmithFoundryClient sends Bearer-authenticated HTTP requests to /v1/foundry/compile and /v1/eval/crisis using httpx.Client with optional MockTransport injection, while build_validated_policy_config enforces zerostreet_schema RLRewardWeights and UserPolicyConfig rules.",
+      "statement": "AlphaSmithFoundryClient는 httpx.Client(선택적 MockTransport)로 /v1/foundry/compile 및 /v1/eval/crisis에 Bearer 인증 HTTP 요청을 보내며, test_skills_and_mcp.py는 fastmcp.Client(mcp_server) 인메모리 도구 호출과 zerostreet_schema 불변식(build_validated_policy_config)을 함께 검증합니다.",
       "evidence": [
         {
           "resource": "repo://src/zerostreet_skills/foundry_mcp.py#L1-L280",
-          "version": "repo-lines-v1:sha256:8e6a86277ee7cafd4a5f617d3ee050a79ab1c8a10fde73db80b9b1a6fee8d13d:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgwLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJkMzAyYWU3NjI4Nzg2ZDM2OTEyZmI3ZmZiZDc1NWU1ZTY5MDhkMzhmY2QwYjA1ZGYzYzdlOWRkYjdjMDE4MjQ4IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIxOGU5OTIzMmNkM2EzMDlmNTBjYmQ2ZjY2MjEyN2VlYWFmY2UxZjczNjI5MmRlZmIxMTNkOTgxYTIwYzdkODUyIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MCwicHJlY2VkaW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
+          "version": "repo-lines-v1:sha256:e8c43b4364155f2a8755dcbcdcbc0104a9ccc288942b79ac0e1a2fe718bbc5d8:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgwLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI1MWI0NGJhMzUwNGM2ZGE2NTgwM2RhOWY1OGI0OGZiY2JkNTQzNjk2NmU0ZmY1OTYyMWY0Y2RmMTVlYzZkNjg3IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIxOGU5OTIzMmNkM2EzMDlmNTBjYmQ2ZjY2MjEyN2VlYWFmY2UxZjczNjI5MmRlZmIxMTNkOTgxYTIwYzdkODUyIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MCwicHJlY2VkaW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
         },
         {
-          "resource": "repo://tests/test_skills_and_mcp.py#L101-L214",
-          "version": "repo-lines-v1:sha256:c6b3d3864f1a8d1e5c7fe05d8fa28065193408396d14dbc11e050d0b60ee4c79:eyJzZWxlY3RlZExpbmVDb3VudCI6MTE0LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJmN2ZhODVmNTg1MjdmYjc1NjI4MmQyNDFlNzQ3NTI2M2Q1MTYwZmM1YjdiNDAwODc0ODUyNTZlM2E5ODM0M2M1IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI1MzgxODJjYzZkNWI1OWQ4MjFhMGNkYTYzNWQ4ZGNiNDA1MmU3OGEwNGU1YjUxMzhkOWQ2ZWIwZGI5NTc5N2VjIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI1YmQxMGUzNTJlYmI3M2Y0Y2U4NzQ1YWE0ZjU0OWFkZjZhYmUwMjRhMzlmNTUzMWExMWMxYjk3OWMyZWQzM2Q0IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
+          "resource": "repo://tests/test_skills_and_mcp.py#L100-L199",
+          "version": "repo-lines-v1:sha256:570b4aa69d7b84cb942cb92250e214eabe9f75002ca1b922d4fcf4a15920ec95:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAwLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI0ZGViM2M5YmZjMDQ2MGMyOWI1ZGJkNjI5ZjU2ZGM1ZDU2ZTQyZWZiZTQyN2ZiMjhjNTUxZTZhY2JmYTA5NGNhIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIwMWJhNDcxOWM4MGI2ZmU5MTFiMDkxYTdjMDUxMjRiNjRlZWVjZTk2NGUwOWMwNThlZjhmOTgwNWRhY2E1NDZiIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI0ZmVlMDVlZTUyNDUwYzY5YTAyMjdkYzdkNTQ1NzgzNGZkZmI3YWY5NDM3ZmE3MDY3YmE3NTZlMmQ0ZDc2NjY0IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJjNDJmODIxZmU3ZDJiNmUzZDBmMzgxOTkxZTdlYWNiOTIzZTBlMmI0NWRhMjRjMjE4YjA4NDdiYmI3ODAxNTBmIn0"
         }
       ]
     },
     {
       "id": "claim_dce74b1a30bf44ceacb2b43806173e47",
-      "statement": "generate_sovereign_scaffold_manifest outputs a non-advisory AlphaGraph and Guardrail runtime configuration manifest with contains_company_weights set to False and required env var keys listed without secrets.",
+      "statement": "generate_sovereign_scaffold_manifest는 contains_company_weights=False가 고정되고 비밀값 대신 필요한 환경변수 키 목록만 포함된 로컬 AlphaGraph·Guardrail 설정 매니페스트를 생성합니다.",
       "evidence": [
         {
           "resource": "repo://src/zerostreet_skills/foundry_mcp.py#L110-L150",
-          "version": "repo-lines-v1:sha256:35bdee2c1159cbfc0f0475684a17ffe3b137b20cf401b066d9826d2987d439be:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNkMGY1NmMzZGQ1MmJlMTcxOTc3ZmIzNjUzZjQzM2I2ZGFkZjZiZjNjOWRhMzRmMDYyNWM0NzM5YzQ3YzY4N2MiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFmNzVjMDRhM2M3MTk5YTI1NWY3MjU3ODI4YmY5Yzg4NzljYTI4ZGU2N2RkNzc1NGIxOWI3MTA0M2Q2NjY1MDIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFiODBkNzRjYzMyZmNkYjAyZmMxODY3NDk5MDA5NWE4Y2RmMTc4YTZkMTJkN2FiNmY3YjI0NWNkZGUzMDg4NTYifQ"
+          "version": "repo-lines-v1:sha256:edaa2e06f4fa1ef2a787f9a53e72c8b751e5cf5635cc12e4f4ec80b1c9016e26:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNkMGY1NmMzZGQ1MmJlMTcxOTc3ZmIzNjUzZjQzM2I2ZGFkZjZiZjNjOWRhMzRmMDYyNWM0NzM5YzQ3YzY4N2MiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFmNzVjMDRhM2M3MTk5YTI1NWY3MjU3ODI4YmY5Yzg4NzljYTI4ZGU2N2RkNzc1NGIxOWI3MTA0M2Q2NjY1MDIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFiODBkNzRjYzMyZmNkYjAyZmMxODY3NDk5MDA5NWE4Y2RmMTc4YTZkMTJkN2FiNmY3YjI0NWNkZGUzMDg4NTYifQ"
         }
       ]
     }
   ],
   "verification": {
     "by": "openwiki/0.7.2",
-    "at": "2026-11-22T13:08:15.756Z"
+    "at": "2026-11-22T13:24:21.898Z"
   }
 }

@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:6eb688504100f9957f87a27709aede16127f533574c9ee59ef1c5a8011ab9058",
+  "pageVersion": "sha256:8d56a9c7d747e7203d3d3a9ecd1260e2c4aa44decd7c02b0fc657c4a007875fe",
   "claims": [
     {
       "id": "claim_193799fc67ef42b8b00bc6336c659e70",
-      "statement": "zerostreet-skills is an MIT package depending on mcp[cli], deepagents, langchain-core, langgraph, and zerostreet-schema, exposing the zerostreet-foundry-mcp CLI entrypoint.",
+      "statement": "zerostreet-skills는 fastmcp>=4.0.0, deepagents, langchain-core, langgraph, zerostreet-schema에 의존하는 MIT 패키지로, zerostreet-foundry-mcp CLI 엔트리포인트를 제공합니다.",
       "evidence": [
         {
           "resource": "repo://pyproject.toml#L1-L48",
-          "version": "repo-lines-v1:sha256:b2015f38fcf589ec59f5c8243dcc4d40f2b588f646f6a18e87e1a31983d831d1:eyJzZWxlY3RlZExpbmVDb3VudCI6NDgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA0NTY5OTQ2YWM5YmJlN2NiMmNkZWMzZjhiZWNmMzQzNzUwYzU4YjliMzIxZWMyMTk1YmZiYWFiMmFhOGM0YmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUwZDE5NmMyZDAwOTdjMDJmNTgxOGRjNzRlY2FiZGUxNjdmZmZkYzAzY2ZhNTRjYmJhYjFmZmRmMWQ0YjY4ZjIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+          "version": "repo-lines-v1:sha256:c97cc1df91f90eddfb970ab88721dbe22a29f0647f54a8c90c14fa0bbfcfd394:eyJzZWxlY3RlZExpbmVDb3VudCI6NDgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA0NTY5OTQ2YWM5YmJlN2NiMmNkZWMzZjhiZWNmMzQzNzUwYzU4YjliMzIxZWMyMTk1YmZiYWFiMmFhOGM0YmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUwZDE5NmMyZDAwOTdjMDJmNTgxOGRjNzRlY2FiZGUxNjdmZmZkYzAzY2ZhNTRjYmJhYjFmZmRmMWQ0YjY4ZjIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
         },
         {
           "resource": "repo://src/zerostreet_skills/__init__.py#L1-L41",
@@ -18,11 +18,11 @@
     },
     {
       "id": "claim_3bc4acc3cb1c4a60a4f72afdfbef9948",
-      "statement": "claude_desktop_config.example.json은 ALPHASMITH_BASE_URL과 ZEROSTREET_API_KEY를 사용해 uv run zerostreet-foundry-mcp를 stdio MCP로 실행하도록 구성되며, MIT 저장소 내부에는 회사가 학습한 매매 가중치를 0바이트로 유지합니다.",
+      "statement": "claude_desktop_config.example.json은 ALPHASMITH_BASE_URL과 ZEROSTREET_API_KEY를 사용해 uv run zerostreet-foundry-mcp를 stdio MCP(FastMCP)로 실행하도록 구성되며, MIT 저장소 내부에는 회사가 학습한 매매 가중치를 0바이트로 유지합니다.",
       "evidence": [
         {
           "resource": "repo://README.md#L1-L72",
-          "version": "repo-lines-v1:sha256:97bde373f977b6885ce893dc7622fae69438a7e9c9424ca96b53bd91a0eff9a4:eyJzZWxlY3RlZExpbmVDb3VudCI6NzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVjOTk2NjBkYWMyZGNmN2E2MGNhMDIyZWUwNjM2MDU3ZjJiZmU1NTE0Yjg1YmJkZDQ2M2U0ZTMzZGI3NDdlNGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNmYjU2OTRlZTA5ZTgxZjRhMTI5NDY1YmE2MWJkYTM5ZGI2Yzk0MzYxNmQ0MjA4Yjc1OTRhNTRlMTRhYzc2MDciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+          "version": "repo-lines-v1:sha256:be06cfd3d4674d0f32dd2dab5f62d43ba6fd352e03c52e30109da272ac0dc96a:eyJzZWxlY3RlZExpbmVDb3VudCI6NzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVjOTk2NjBkYWMyZGNmN2E2MGNhMDIyZWUwNjM2MDU3ZjJiZmU1NTE0Yjg1YmJkZDQ2M2U0ZTMzZGI3NDdlNGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNmYjU2OTRlZTA5ZTgxZjRhMTI5NDY1YmE2MWJkYTM5ZGI2Yzk0MzYxNmQ0MjA4Yjc1OTRhNTRlMTRhYzc2MDciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
         },
         {
           "resource": "repo://claude_desktop_config.example.json#L1-L17",
@@ -33,6 +33,6 @@
   ],
   "verification": {
     "by": "openwiki/0.7.2",
-    "at": "2026-11-22T13:08:15.756Z"
+    "at": "2026-11-22T13:24:21.898Z"
   }
 }

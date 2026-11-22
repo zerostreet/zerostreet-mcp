@@ -1,17 +1,17 @@
 ---
 type: workflow
 title: Foundry MCP 서버 및 로컬 런타임 스캐폴딩 워크플로우
-description: mcp>=2.0 MCPServer 기반 6개 Foundry 및 스킬 도구, AlphaSmithFoundryClient HTTP 연동, UserPolicyConfig 스키마 검증 및 가중치 0바이트 로컬 런타임 청사진 생성 워크플로우를 한국어로 설명합니다.
-tags: [workflows, mcp, foundry, scaffolding, zerostreet-schema]
+description: FastMCP(fastmcp>=4.0) 기반 6개 Foundry 및 스킬 도구, fastmcp.Client 종단간 검증, AlphaSmithFoundryClient HTTP 연동, UserPolicyConfig 스키마 검증 및 가중치 0바이트 로컬 런타임 청사진 생성 워크플로우를 한국어로 설명합니다.
+tags: [workflows, fastmcp, mcp, foundry, scaffolding, zerostreet-schema]
 verified:
   - by: openwiki/0.7.2
-    at: 2026-11-22T13:08:15.756Z
+    at: 2026-11-22T13:24:21.898Z
 sources:
   - id: openwiki-source-f6d7762b242723b33719f7bc
     resource: repo://src/zerostreet_skills/foundry_mcp.py
   - id: openwiki-source-660754668846d949ebc10551
     resource: repo://tests/test_skills_and_mcp.py
-generated: { by: "antigravity", at: "2026-11-22T13:08:15.756Z" }
+generated: { by: "antigravity", at: "2026-11-22T13:24:21.898Z" }
 ---
 
 # Foundry MCP 서버 및 로컬 런타임 스캐폴딩 워크플로우
@@ -20,14 +20,14 @@ generated: { by: "antigravity", at: "2026-11-22T13:08:15.756Z" }
 
 ---
 
-## 1. `mcp>=2.0` `MCPServer` 통합 및 실행 엔트리포인트
+## 1. `FastMCP` (`fastmcp>=4.0`) 통합 및 실행 엔트리포인트
 
-- **최신 MCP SDK 호환**: 레거시 `FastMCP`가 제거된 `mcp>=2.0` 규격에 맞춰 `from mcp.server.mcpserver import MCPServer`를 사용하며 `mcp_server = MCPServer(name="zerostreet-foundry", ...)` 인스턴스를 생성합니다.
-- **CLI 실행 엔트리포인트**: [`pyproject.toml`](../../pyproject.toml#L30-L32)이 `zerostreet-foundry-mcp` 명령을 노출하며, 실행 시 `main()`이 `mcp_server.run(transport="stdio")`로 MCP 서버를 띄웁니다.
+- **독립형 `FastMCP` 프레임워크 적용**: `from fastmcp import FastMCP`를 사용해 `mcp_server = FastMCP(name="zerostreet-foundry", ...)` 인스턴스를 구성하며, `zerostreet_skills/__init__.py`의 `mcp_server` 공개 심볼을 그대로 유지합니다.
+- **CLI 실행 엔트리포인트**: [`pyproject.toml`](../../pyproject.toml#L30-L32)이 `zerostreet-foundry-mcp` 명령을 노출하며, 실행 시 `main()`이 `mcp_server.run(transport="stdio", show_banner=False)`로 깔끔한 `stdio` 전송 채널을 엽니다(Claude Desktop·Cursor·Antigravity와 충돌 없이 JSON-RPC 프레임만 송수신).
 
 ---
 
-## 2. 공개된 6종 MCP 도구
+## 2. 공개된 6종 `FastMCP` 도구
 
 `@mcp_server.tool()` 데코레이터로 등록된 6가지 도구는 모두 스키마 불변식과 비투자자문 원칙을 강제합니다.
 
@@ -42,7 +42,7 @@ generated: { by: "antigravity", at: "2026-11-22T13:08:15.756Z" }
 
 ---
 
-## 3. 정책 검증 · 컴파일 및 스캐폴딩 데이터 흐름
+## 3. 정책 검증 · 컴파일 · 스캐폴딩 흐름 및 인메모리 검증
 
 ```mermaid
 flowchart LR
@@ -52,7 +52,7 @@ flowchart LR
     VAL --> MANI["generate_sovereign_scaffold_manifest() (로컬 AlphaGraph 청사진)"]
 ```
 
-- **`AlphaSmithFoundryClient`**: `ALPHASMITH_BASE_URL`(기본 `http://127.0.0.1:8000`)과 `ZEROSTREET_API_KEY` 환경변수를 읽어 `Authorization: Bearer <api_key>` 헤더를 붙여 요청하며, `httpx.MockTransport` 주입을 지원해 [`test_skills_and_mcp.py`](../../tests/test_skills_and_mcp.py#L101-L214)로 오프라인 검증이 가능합니다.
+- **`AlphaSmithFoundryClient` 및 `fastmcp.Client` 검증**: `AlphaSmithFoundryClient`는 `ALPHASMITH_BASE_URL`(기본 `http://127.0.0.1:8000`)과 `ZEROSTREET_API_KEY` 환경변수를 읽어 `Authorization: Bearer <api_key>` 헤더로 요청합니다. [`test_skills_and_mcp.py`](../../tests/test_skills_and_mcp.py#L100-L199)는 `isinstance(mcp_server, FastMCP)` 확인, `fastmcp.Client(mcp_server)` 인메모리 `list_tools()` / `call_tool()` 종단간 호출, 그리고 `httpx.MockTransport` 기반 오프라인 HTTP 테스트를 모두 검증합니다.
 - **스캐폴드 매니페스트 (`generate_sovereign_scaffold_manifest`)** ([`foundry_mcp.py`](../../src/zerostreet_skills/foundry_mcp.py#L110-L150)): `compliance_mode: "Non-Advisory-Info-Provider-And-SW-Rental"`, `contains_company_weights: False`, 로컬 SQLite 체크포인트 경로(`sqlite://./.alphagraph_state.db`), 방화벽 한도, 그리고 실제 비밀값 대신 필요한 환경변수 키 이름 목록만 담아 돌려줍니다.
 
 ---

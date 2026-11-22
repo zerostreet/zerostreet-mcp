@@ -21,7 +21,7 @@
 1. **AI 코딩 도우미가 내 계좌 조건에 맞지 않는 엉뚱한 설정이나 허술한 안전장치를 짜 줄 수 있습니다.**  
    `zerostreet-skills`는 5종의 표준화된 전문 스킬(`skills/*/SKILL.md`)을 단계별(Progressive Disclosure)로 제공해, 에이전트가 반드시 **리밸런싱 수학 정합성**, **사전 리스크 게이트**, **거시 위기 시뮬레이션** 원칙을 따르도록 안내합니다.
 2. **클라우드 파운드리 컴파일 요청이나 로컬 데몬 환경 구성을 매번 수작업으로 맞추기 번거롭습니다.**  
-   공식 `MCPServer`(`zerostreet-foundry`)가 `build_user_policy_config`, `submit_foundry_compile_job`, `run_crisis_replay`, `scaffold_sovereign_runtime_manifest` 6가지 도구를 제공하므로, 에이전트가 실수 없이 로컬 데몬 설정(`AlphaGraph` + `Guardrail`)을 조립해 줍니다. 이때 회사의 독점 가중치가 섞여 있지 않음(`contains_company_weights=False`)을 명시적으로 보장합니다.
+   **FastMCP**(`fastmcp>=4.0`) 기반의 `zerostreet-foundry` 서버가 `build_user_policy_config`, `submit_foundry_compile_job`, `run_crisis_replay`, `scaffold_sovereign_runtime_manifest` 6가지 도구를 제공하므로, 에이전트가 실수 없이 로컬 데몬 설정(`AlphaGraph` + `Guardrail`)을 조립해 줍니다. 이때 회사의 독점 가중치가 섞여 있지 않음(`contains_company_weights=False`)을 명시적으로 보장합니다.
 
 ---
 
@@ -29,7 +29,7 @@
 
 ```mermaid
 flowchart LR
-    USER["투자자 / AI 에이전트 (Claude Desktop 등)"] -->|"도구 호출 (stdio)"| MCP["zerostreet-foundry MCPServer"]
+    USER["투자자 / AI 에이전트 (Claude Desktop 등)"] -->|"도구 호출 (stdio)"| MCP["zerostreet-foundry FastMCP 서버"]
     MCP --> SK["skill_registry.py (5종 MIT 스킬 조회)"]
     MCP --> VAL["build_user_policy_config (zerostreet_schema 불변식 검증)"]
     VAL --> FND["submit_foundry_compile_job and run_crisis_replay (alphasmith 연동)"]
@@ -50,7 +50,7 @@ flowchart LR
 
 ### 주요 파이썬 모듈 (`src/zerostreet_skills/`)
 
-- [`foundry_mcp.py`](./src/zerostreet_skills/foundry_mcp.py): `mcp>=2.0` `MCPServer` 기반 6종 MCP 도구 및 `AlphaSmithFoundryClient`
+- [`foundry_mcp.py`](./src/zerostreet_skills/foundry_mcp.py): `FastMCP`(`fastmcp>=4.0`) 기반 6종 MCP 도구 및 `AlphaSmithFoundryClient`
 - [`skill_registry.py`](./src/zerostreet_skills/skill_registry.py): `discover_skills`, `load_skill_markdown`, `validate_skills_compliance`
 - [`architect_agent.py`](./src/zerostreet_skills/architect_agent.py): DeepAgents 기반 빌드타임 아키텍트 에이전트(`create_zerostreet_architect_agent`)
 - [`claude_desktop_config.example.json`](./claude_desktop_config.example.json): Claude Desktop MCP 등록 예시 파일

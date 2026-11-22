@@ -8,6 +8,7 @@ from typing import Any
 
 import httpx
 import pytest
+from fastmcp import Client, FastMCP
 from langchain_core.callbacks import CallbackManagerForLLMRun
 from langchain_core.language_models import BaseChatModel
 from langchain_core.messages import AIMessage, BaseMessage, ToolMessage
@@ -97,16 +98,60 @@ def test_skill_registry_discovery_and_compliance() -> None:
 
 
 def test_foundry_mcp_tools_and_mock_transport() -> None:
+    assert isinstance(mcp_server, FastMCP)
     tools = asyncio.run(mcp_server.list_tools())
     tool_names = {t.name for t in tools}
-    assert {
+    expected_tools = {
         "list_zerostreet_skills",
         "read_zerostreet_skill",
         "build_user_policy_config",
         "submit_foundry_compile_job",
         "run_crisis_replay",
         "scaffold_sovereign_runtime_manifest",
-    }.issubset(tool_names)
+    }
+    assert expected_tools.issubset(tool_names)
+
+    async def _verify_fastmcp_client() -> None:
+        async with Client(mcp_server) as client:
+            client_tools = await client.list_tools()
+            assert expected_tools.issubset({t.name for t in client_tools})
+
+            skills_res = await client.call_tool("list_zerostreet_skills", {})
+            assert skills_res.is_error is False
+            assert len(skills_res.data) == len(EXPECTED_SKILL_NAMES)
+
+            skill_doc = await client.call_tool(
+                "read_zerostreet_skill", {"skill_name": "sovereign-system-architect"}
+            )
+            assert skill_doc.is_error is False
+            assert "Zero Investment Advisory" in skill_doc.data
+
+            policy_res = await client.call_tool(
+                "build_user_policy_config",
+                {
+                    "target_universe": ["ASSET_A", "ASSET_B", "CASH"],
+                    "rl_reward_weights": {"sortino_20": 1.0, "cvar_20": 0.4},
+                },
+            )
+            assert policy_res.is_error is False
+            assert policy_res.data["portfolio_horizon"] == 20
+
+            scaffold_res = await client.call_tool(
+                "scaffold_sovereign_runtime_manifest",
+                {
+                    "user_id": "usr_mcp_test",
+                    "target_universe": ["ASSET_A", "ASSET_B", "CASH"],
+                    "rl_reward_weights": {"sortino_20": 1.0},
+                },
+            )
+            assert scaffold_res.is_error is False
+            assert scaffold_res.data["contains_company_weights"] is False
+            assert (
+                scaffold_res.data["compliance_mode"]
+                == "Non-Advisory-Info-Provider-And-SW-Rental"
+            )
+
+    asyncio.run(_verify_fastmcp_client())
 
     valid_cfg = build_validated_policy_config(
         target_universe=["ASSET_A", "ASSET_B", "CASH"],

@@ -1,11 +1,11 @@
 ---
 type: quickstart
 title: zerostreet-skills v0.1.0 개요 및 빠른 시작
-description: 코딩 에이전트(Claude Desktop, Cursor, Antigravity)가 안전하게 투자 시스템을 설계하고 Foundry MCP를 연동할 수 있도록 돕는 zerostreet-skills v0.1.0의 소비자 가치와 구조를 한국어로 안내합니다.
-tags: [quickstart, zerostreet-skills, mcp, deepagents, agent-skills]
+description: 코딩 에이전트(Claude Desktop, Cursor, Antigravity)가 안전하게 투자 시스템을 설계하고 FastMCP 기반 Foundry MCP를 연동할 수 있도록 돕는 zerostreet-skills v0.1.0의 소비자 가치와 구조를 한국어로 안내합니다.
+tags: [quickstart, zerostreet-skills, fastmcp, mcp, deepagents, agent-skills]
 verified:
   - by: openwiki/0.7.2
-    at: 2026-11-22T13:08:15.756Z
+    at: 2026-11-22T13:24:21.898Z
 sources:
   - id: openwiki-source-d271781df50b232396052753
     resource: repo://claude_desktop_config.example.json
@@ -15,7 +15,7 @@ sources:
     resource: repo://README.md
   - id: openwiki-source-8fed81e51001634cf0ad976d
     resource: repo://src/zerostreet_skills/__init__.py
-generated: { by: "antigravity", at: "2026-11-22T13:08:15.756Z" }
+generated: { by: "antigravity", at: "2026-11-22T13:24:21.898Z" }
 ---
 
 # zerostreet-skills v0.1.0 개요 및 빠른 시작
@@ -27,15 +27,15 @@ generated: { by: "antigravity", at: "2026-11-22T13:08:15.756Z" }
 1. **AI 코딩 도우미가 리스크 검증 없이 허술한 매매 설정을 만들어 줄까 걱정됩니다.**  
    5종의 MIT 에이전트 스킬(`SKILL.md`)이 리밸런싱 수학 정합성, 사전 리스크 게이트, 거시 위기 시뮬레이션 체크리스트를 단계별(Progressive Disclosure)로 제공해, 에이전트가 반드시 검증된 안전 규칙을 따르게 합니다.
 2. **클라우드 파운드리와 로컬 실행 데몬 설정을 수작업으로 맞추기 번거롭습니다.**  
-   `MCPServer`(`zerostreet-foundry-mcp`)가 `UserPolicyConfig` 검증, `alphasmith` 위기 리플레이·GPU 파운드리 컴파일 요청, 그리고 회사 가중치가 전혀 섞이지 않은(`contains_company_weights=False`) 로컬 `alphagraph` 청사진 생성까지 6가지 도구로 깔끔히 연결해 줍니다. 물론 이 저장소에도 **회사 자체 매매 가중치는 0바이트**만 유지됩니다([README.md](../README.md#L1-L72)).
+   **FastMCP**(`fastmcp>=4.0`) 기반의 `zerostreet-foundry` 서버가 `UserPolicyConfig` 검증, `alphasmith` 위기 리플레이·GPU 파운드리 컴파일 요청, 그리고 회사 가중치가 전혀 섞이지 않은(`contains_company_weights=False`) 로컬 `alphagraph` 청사진 생성까지 6가지 도구로 깔끔히 연결해 줍니다. 물론 이 저장소에도 **회사 자체 매매 가중치는 0바이트**만 유지됩니다([README.md](../README.md#L1-L72)).
 
 ---
 
-## 빌드타임 아키텍트 · MCP 연결 흐름
+## 빌드타임 아키텍트 · FastMCP 연결 흐름
 
 ```mermaid
 flowchart LR
-    DEV["투자자 · AI 코딩 에이전트"] -->|"stdio MCP"| MCP["zerostreet-foundry MCPServer"]
+    DEV["투자자 · AI 코딩 에이전트"] -->|"stdio MCP"| MCP["zerostreet-foundry FastMCP 서버"]
     MCP --> REG["skill_registry.py (5대 MIT 스킬 로딩)"]
     MCP --> POL["build_user_policy_config (zerostreet-schema 검증)"]
     POL --> ASM["submit_foundry_compile_job 및 run_crisis_replay (alphasmith 연동)"]
@@ -50,10 +50,10 @@ flowchart LR
 
 | 구성 요소 | 핵심 기능 | 파일 경로 |
 | :--- | :--- | :--- |
-| **`pyproject.toml`** | `mcp[cli]`, `deepagents`, `langchain-core`, `langgraph`, `zerostreet-schema` 의존성 및 `zerostreet-foundry-mcp` 스크립트 정의 | [`pyproject.toml`](../pyproject.toml#L1-L48) |
+| **`pyproject.toml`** | `fastmcp>=4.0.0`, `deepagents`, `langchain-core`, `langgraph`, `zerostreet-schema` 의존성 및 `zerostreet-foundry-mcp` 스크립트 정의 | [`pyproject.toml`](../pyproject.toml#L1-L48) |
 | **`claude_desktop_config.example.json`** | `uv --directory /path/to/zerostreet-skills run zerostreet-foundry-mcp` 실행과 `ALPHASMITH_BASE_URL` · `ZEROSTREET_API_KEY` 등록 예시 | [`claude_desktop_config.example.json`](../claude_desktop_config.example.json#L1-L17) |
 | **`skill_registry.py`** | 5대 `SKILL.md` 점진적 로딩(`discover_skills`, `load_skill_markdown`) 및 규제 검사(`validate_skills_compliance`) | [`skill_registry.py`](../src/zerostreet_skills/skill_registry.py#L1-L143) |
-| **`foundry_mcp.py`** | `MCPServer` 6종 도구 및 `AlphaSmithFoundryClient` | [`foundry_mcp.py`](../src/zerostreet_skills/foundry_mcp.py#L1-L280) |
+| **`foundry_mcp.py`** | `FastMCP`(`fastmcp>=4.0`) 6종 도구(`show_banner=False` stdio) 및 `AlphaSmithFoundryClient` | [`foundry_mcp.py`](../src/zerostreet_skills/foundry_mcp.py#L1-L280) |
 | **`architect_agent.py`** | `/skills/` 가상 파일시스템(`CompositeBackend`) 및 유료 컴파일 전 HITL(`HumanInTheLoopMiddleware`) 아키텍트 | [`architect_agent.py`](../src/zerostreet_skills/architect_agent.py#L1-L205) |
 
 ---
@@ -63,7 +63,7 @@ flowchart LR
 ```bash
 uv sync --dev
 uv run ruff check .
-uv run pytest -q
+uv run pytest -v
 ```
 
 ---

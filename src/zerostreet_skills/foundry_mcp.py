@@ -1,14 +1,14 @@
-"""ZeroStreet Foundry MCP Server conforming to mcp>=2.0 MCPServer.
+"""ZeroStreet Foundry MCP Server built with FastMCP (fastmcp>=4.0).
 
-mcp>=2.0 MCPServer 규격을 준수하는 ZeroStreet Foundry MCP 서버입니다.
+FastMCP(fastmcp>=4.0) 규격을 준수하는 ZeroStreet Foundry MCP 서버입니다.
 """
 
 import os
 from typing import Any, Literal
 
 import httpx
+from fastmcp import FastMCP
 from loguru import logger
-from mcp.server.mcpserver import MCPServer
 from zerostreet_schema import (
     HorizonMaskMode,
     PolicyCompileRequest,
@@ -143,7 +143,7 @@ def generate_sovereign_scaffold_manifest(
     }
 
 
-mcp_server = MCPServer(
+mcp_server = FastMCP(
     name="zerostreet-foundry",
     instructions=(
         "ZeroStreet B2A Foundry MCP Server. Provide non-advisory engineering scaffolding, "
@@ -268,12 +268,12 @@ def scaffold_sovereign_runtime_manifest(
 
 
 def main() -> None:
-    """Run ZeroStreet Foundry MCPServer over stdio transport.
+    """Run ZeroStreet Foundry FastMCP server over stdio transport.
 
-    stdio 전송 방식으로 ZeroStreet Foundry MCP 서버를 실행합니다.
+    stdio 전송 방식으로 ZeroStreet Foundry FastMCP 서버를 실행합니다.
     """
-    logger.info("Starting ZeroStreet Foundry MCPServer (stdio transport)")
-    mcp_server.run(transport="stdio")
+    logger.info("Starting ZeroStreet Foundry FastMCP server (stdio transport)")
+    mcp_server.run(transport="stdio", show_banner=False)
 
 
 if __name__ == "__main__":
