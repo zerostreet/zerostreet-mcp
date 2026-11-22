@@ -17,7 +17,7 @@ ZeroStreet's MIT Agent Skills (`SKILL.md` x5), Foundry MCP server (`zerostreet-f
 ### 한국어
 
 * **B2A 최상단 유입(Top-of-Funnel) 성장 엔진 (`Layer 0.5`)**: 고객이 직접 코드를 조립할 필요 없이 Claude Code·Codex·Antigravity·OpenClaw에 스킬과 MCP를 연결하는 것만으로, 코딩 에이전트가 자사 전략 설계자이자 ZeroStreet 온보딩 엔지니어 역할을 수행합니다.
-* **AlphaSmith 유료 파운드리 자연 전환 퍼널**: 5대 `SKILL.md`와 MCP 툴(`build_user_policy_config`, `run_crisis_replay`, `submit_foundry_compile_job`)을 거쳐 고객이 HITL 승인을 누르면 유료 `AlphaSmith` GPU 컴파일 및 `Model A` 구독으로 자연스럽게 이어집니다.
+* **AlphaSmith 유료 파운드리 자연 전환 퍼널**: 5대 `SKILL.md`와 MCP 툴(`build_user_policy_config`, `run_crisis_replay`, `submit_foundry_compile_job`)을 거쳐 고객이 HITL 승인을 누르면 유료 `AlphaSmith` GPU 컴파일 및 `ZeroLens` 구독으로 자연스럽게 이어집니다.
 * **규제·가중치 0바이트 원칙**: 회사 학습 전략 가중치 0바이트를 유지하고 종목 추천을 전면 금지합니다.
 
 ---
